@@ -68,7 +68,7 @@
 
 
                 <li>
-                    <a href="#"><i class="glyphicon glyphicon-folder-open"></i> Home<span class="fa arrow"></span></a>
+                    <a href="#"><i class="glyphicon glyphicon-home"></i> Home<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="<?php echo base_url('administrator/menuSlide');?>"> <i class="fa fa-circle-o fa-fw"></i>MenuSlide</a>

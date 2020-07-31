@@ -45,11 +45,11 @@ $this->db->select("*")
                 <div id="search-result dropdown"></div>
                 <div class="border-form">
                     <form action="">
-                        <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off">
-                        <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off">
-                        <input type="text" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off">
-                        <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off">
-                        <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off">
+                        <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" required>
+                        <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" required>
+                        <input type="text" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" required>
+                        <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off" required>
+                        <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off" required>
                         <button type="submit" class="btn btn-sm">ค้นหา</button>
                     </form>
                     
