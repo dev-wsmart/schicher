@@ -23,7 +23,6 @@
       body {
         padding-top: 40px;
         padding-bottom: 40px;
-
         background-color:#a2ced1;
         /* background:url('<?php echo base_url();?>image/bg_login.jpg') no-repeat center center fixed; */
         -webkit-background-size: cover;
@@ -31,6 +30,9 @@
         -o-background-size: cover;
         background-size: cover;
         color: #C1C3C6
+      }
+      .form-signin{
+        color: #ff1900;
       }
     </style>
   </head>
@@ -61,8 +63,8 @@
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" />
           </div>
         </div>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me" name='expire'> &nbsp Remember me
+        <label class="checkbox" style="color: #3d3d3d;">
+          <input type="checkbox" value="remember-me" name='expire'> &nbsp; Remember me
         </label>
         <button class="btn btn-lg btn btn btn-block" type="submit" style=" background-color:#000000; color:#fff;" >Login</button>
       </form>
@@ -74,7 +76,7 @@
     <div style='width:100%;position:fixed;bottom:0;left:0;background:#373e4a;padding-top:5px;'>
       <div class="container">
         <div class="copyright clearfix text-center">
-          <p><b>Copyrights ©  .All Rights Reserved. </b></p>
+          <p><b>Copyrights © All Rights Reserved. </b></p>
 
         </div>
       </div>

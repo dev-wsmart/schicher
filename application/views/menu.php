@@ -17,12 +17,12 @@
     </table>
 
     <div id="nav">
-        <a href="<?php base_url();?>/backend/" id="home" class="active">หน้าหลัก</a>
-        <a href="<?php base_url();?>/backend/about" id="about">เกี่ยวกับเรา</a>
-        <a href="<?php base_url();?>/backend/product" id="product">ซื้อผลิตภัณฑ์</a>
-        <a href="<?php base_url();?>/backend/promotion" id="promotion">โปรโมชั่น</a>
-        <a href="<?php base_url();?>/backend/news" id="news">ข่าวสารและกิจกรรม</a>
-        <a href="<?php base_url();?>/backend/contactus" id="contactus">ติดต่อเรา</a>
+        <a href="<?php echo base_url();?>" id="home" class="active">หน้าหลัก</a>
+        <a href="<?php echo base_url();?>about" id="about">เกี่ยวกับเรา</a>
+        <a href="<?php echo base_url();?>product" id="product">ซื้อผลิตภัณฑ์</a>
+        <a href="<?php echo base_url();?>promotion" id="promotion">โปรโมชั่น</a>
+        <a href="<?php echo base_url();?>news" id="news">ข่าวสารและกิจกรรม</a>
+        <a href="<?php echo base_url();?>contactus" id="contactus">ติดต่อเรา</a>
     </div>
 </div>
 
@@ -36,12 +36,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav" style="padding-top: 20px;">
-                <a class="home nav-item nav-link active" href="<?php base_url();?>/backend/">หน้าหลัก <span class="sr-only">(current)</span></a>
-                <a class="about nav-item nav-link" href="<?php base_url();?>/backend/about">เกี่ยวกับเรา</a>
-                <a class="product nav-item nav-link" href="<?php base_url();?>/backend/product">ซื้อผลิตภัณฑ์</a>
-                <a class="promotion nav-item nav-link" href="<?php base_url();?>/backend/promotion">โปรโมชั่น</a>
-                <a class="news nav-item nav-link" href="<?php base_url();?>/backend/news">ข่าวสารและกิจกรรม</a>
-                <a class="contactus nav-item nav-link" href="<?php base_url();?>/backend/contactus">ติดต่อเรา</a>
+                <a class="home nav-item nav-link active" href="<?php echo base_url();?>">หน้าหลัก <span class="sr-only">(current)</span></a>
+                <a class="about nav-item nav-link" href="<?php echo base_url();?>about">เกี่ยวกับเรา</a>
+                <a class="product nav-item nav-link" href="<?php echo base_url();?>product">ซื้อผลิตภัณฑ์</a>
+                <a class="promotion nav-item nav-link" href="<?php echo base_url();?>promotion">โปรโมชั่น</a>
+                <a class="news nav-item nav-link" href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a>
+                <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
             </div>
         </div>
     </nav>

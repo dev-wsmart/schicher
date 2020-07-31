@@ -138,7 +138,7 @@ class Administrator extends CI_Controller {
 	function news(){
 		$crud = new grocery_CRUD();
 		$crud->set_theme("bootstrap");
-		$crud->set_table('News')
+		$crud->set_table('news')
 	
 		->columns('new_details','news_image','date')
 		->order_by('id','content','date')

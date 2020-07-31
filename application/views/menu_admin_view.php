@@ -68,55 +68,43 @@
 
 
                 <li>
-                    <a href="#"><i class="glyphicon glyphicon-home"></i> Home<span class="fa arrow"></span></a>
+                    <a href="#"><i class="glyphicon glyphicon-home"></i>&nbsp; Home<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo base_url('administrator/menuSlide');?>"> <i class="fa fa-circle-o fa-fw"></i>MenuSlide</a>
+                            <a href="<?php echo base_url('administrator/menuSlide');?>"><i class="fa fa-circle"></i>&nbsp; MenuSlide</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('administrator/packages');?>">  <i class="fa fa-circle-o fa-fw"></i>ผลิตภัณฑ์แนะนำ</a>
+                            <a href="<?php echo base_url('administrator/packages');?>"><i class="fa fa-circle"></i>&nbsp; ผลิตภัณฑ์แนะนำ</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('administrator/product1');?>">  <i class="fa fa-circle-o fa-fw"></i>ซื้อผลิตภัณฑ์ง่าย</a>
+                            <a href="<?php echo base_url('administrator/product1');?>"><i class="fa fa-circle"></i>&nbsp; ซื้อผลิตภัณฑ์ง่าย</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('administrator/product2');?>">  <i class="fa fa-circle-o fa-fw"></i>ชีวิตดี๊ดีเมื่อมี SMART SURE</a>
+                            <a href="<?php echo base_url('administrator/product2');?>"><i class="fa fa-circle"></i>&nbsp; ชีวิตดี๊ดีเมื่อมี SMART SURE</a>
                         </li>
                     </ul>    
                 </li>
                 
 
                 <li>
-                    <a href="<?php echo base_url('administrator/about');?>"><i class="fa fa-fire fa-fw"></i> About Us</a>
+                    <a href="<?php echo base_url('administrator/about');?>"><i class="fa fa-users"></i>&nbsp; About Us</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/product');?>"><i class=" glyphicon glyphicon-transfer "></i> Product</a>
+                    <a href="<?php echo base_url('administrator/product');?>"><i class="fa fa-car"></i>&nbsp; Product</a>
                 </li>  
 
                 <li>
-                    <a href="<?php echo base_url('administrator/promotion');?>"><i class=" glyphicon glyphicon-transfer "></i> Promotion</a>
+                    <a href="<?php echo base_url('administrator/promotion');?>"><i class="fa fa-calendar"></i>&nbsp; Promotion</a>
                 </li> 
                 <li>
-                    <a href="<?php echo base_url('administrator/news');?>"><i class=" glyphicon glyphicon-transfer "></i> News</a>
+                    <a href="<?php echo base_url('administrator/news');?>"><i class="fa fa-newspaper-o"></i>&nbsp; News</a>
                 </li> 
 
-                <li>
+                <!-- <li>
                     <a href="<?php echo base_url('administrator/rest_server');?>"><i class=" glyphicon glyphicon-transfer "></i> Rest_server</a>
-                </li> 
+                </li>  -->
 
-
-
-
-
-
-
-
-
-                
-
-
-
-                <li>
+                <!-- <li>
                     <a href="<?php echo base_url('administrator/contactus');?>"><i class="fa fa-fire fa-fw"></i>Contactus</a>
-                </li> 
+                </li>  -->
 </nav>
