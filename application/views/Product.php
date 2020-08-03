@@ -57,9 +57,11 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
                     </div>
                 </div>
             <?php endforeach; ?>
-            <?php if ($query_package->num_rows == 0): ?>
-            ไม่พบผลการค้นหา
-            <?php endif ?>
+            <?php if (isset($_GET['brand']) && isset($_GET['model'])){
+                if ($query_package->num_rows() == 0){
+                  echo "ไม่พบผลการค้นหา";
+                }
+              }?>
         </div>
     </div>
 </div>
