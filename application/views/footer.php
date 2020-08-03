@@ -4,18 +4,18 @@
             <div class="sitemap-title">Site Map</div>
             <div class="row">
                 <div class="col-lg-6 sitemap-left">
-                    <a href="<?php base_url();?>/backend/">หน้าหลัก</a>
+                    <a href="<?php echo base_url();?>">หน้าหลัก</a>
                     <br>
-                    <a href="<?php base_url();?>/backend/about">เกี่ยวกับเรา</a>
+                    <a href="<?php echo base_url();?>about">เกี่ยวกับเรา</a>
                     <br>
-                    <a href="<?php base_url();?>/backend/product">ซื้อผลิตภัณฑ์</a>
+                    <a href="<?php echo base_url();?>product">ซื้อผลิตภัณฑ์</a>
                 </div>
                 <div class="col-lg-6 sitemap-right">
-                    <a href="<?php base_url();?>/backend/promotion">โปรโมชั่น</a>
+                    <a href="<?php echo base_url();?>promotion">โปรโมชั่น</a>
                     <br>
-                    <a href="<?php base_url();?>/backend/news">ข่าวสารและกิจกรรม</a>
+                    <a href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a>
                     <br>
-                    <a href="<?php base_url();?>/backend/contactus">ติดต่อเรา</a>
+                    <a href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
                 </div>
             </div>
         </div>
