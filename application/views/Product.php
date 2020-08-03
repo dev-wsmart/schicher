@@ -53,7 +53,7 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
                         <div class="details">
                           <?php echo mb_substr($product->details,0,600,'UTF-8'); ?>...
                         </div>
-                        <div class="button"><a href="/backend/details/view/<?php echo $product->id ?>" class="btn btn-more">เพิ่มเติม</a></div>
+                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more">เพิ่มเติม</a></div>
                     </div>
                 </div>
             <?php endforeach; ?>

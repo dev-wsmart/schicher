@@ -44,7 +44,7 @@ $this->db->select("*")
             <div class="search-form">
                 <div id="search-result dropdown"></div>
                 <div class="border-form">
-                    <form action="<?php base_url();?>/backend/product">
+                    <form action="<?php echo base_url();?>product">
                         <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" required>
                         <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" required>
                         <input type="number" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" min="1900" max="<?php echo date('Y'); ?>" required>
