@@ -3,7 +3,7 @@
     <table cellspacing="0" cellpadding="0" class="">
         <tr>
             <td width="50%">
-                <a href="/">
+                <a href="<?php echo base_url(); ?>">
                     <div class="col-md-7 col-lg-5 logo animate__animated animate__fadeInDown">
                         <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/logo.png" width="100%">
                     </div>

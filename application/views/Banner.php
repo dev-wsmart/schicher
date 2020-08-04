@@ -44,10 +44,10 @@ $this->db->select("*")
             <div class="search-form">
                 <div id="search-result dropdown"></div>
                 <div class="border-form">
-                    <form action="">
+                    <form action="<?php echo base_url();?>product">
                         <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" required>
                         <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" required>
-                        <input type="text" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" required>
+                        <input type="number" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" min="1900" max="<?php echo date('Y'); ?>" required>
                         <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off" required>
                         <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off" required>
                         <button type="submit" class="btn btn-sm">ค้นหา</button>
@@ -215,6 +215,19 @@ a {
 }
 .search-form button:hover{
     color: #ffffff;
+}
+
+/**/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media only screen and (max-width: 991px){

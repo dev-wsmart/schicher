@@ -110,7 +110,7 @@ $products = $query->row();
         </div>
     </div> -->
     <div class="button">
-      <a href="/backend/customerInfo" class="btn btn-buy">ซื้อผลิตภัณฑ์</a>
+      <a href="<?php echo base_url(); ?>customerInfo" class="btn btn-buy">ซื้อผลิตภัณฑ์</a>
     </div>
 </div>
 

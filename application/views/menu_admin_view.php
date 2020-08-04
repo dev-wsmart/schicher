@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo base_url($this->uri->segment(1).'/administrator');?>">Smartsure | administrator</a>
+        <a class="navbar-brand" href="<?php echo base_url($this->uri->segment(1).'');?>">Smartsure | administrator</a>
     </div>
     <!-- /.navbar-header -->
 

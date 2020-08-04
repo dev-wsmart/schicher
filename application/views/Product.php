@@ -1,9 +1,31 @@
 <?php
-$this->db->select("*");
-$this->db->from("product");
-$this->db->where("product.status", "1");
-$query = $this->db->get();
-$products = $query->result();
+if (isset($_GET['brand']) && isset($_GET['model'])){
+
+  $brand = $_GET['brand'];
+  $model = $_GET['model'];
+  $currentYear = date('Y');
+  $year = intval($_GET['year']);
+  $remainYear = $currentYear - $year;
+  $mileage = intval($_GET['mileage']);
+
+  $this->db->select("distinct('car_package.package'), product.package, product.details, product.image, product.id");
+  $this->db->from('car_package');
+  $this->db->join('product', 'car_package.package_name = product.package');
+  $this->db->like("car_package.car_brand", $brand, 'after');
+  $this->db->like('car_package.car_model', $model, 'after');
+  $this->db->where('car_package.year_limit >', $remainYear);
+  $this->db->where('car_package.km_limit >=', $mileage);
+  $this->db->where("product.status", "1");
+  $query_package = $this->db->get();
+  $products = $query_package->result();
+
+}else{
+  $this->db->select("*");
+  $this->db->from("product");
+  $this->db->where("product.status", "1");
+  $query = $this->db->get();
+  $products = $query->result();
+}
 ?>
 <?php include('Banner.php'); ?>
 <div class="product">
@@ -30,10 +52,17 @@ $products = $query->result();
                         <div class="details">
                           <?php echo mb_substr($product->details,0,600,'UTF-8'); ?>...
                         </div>
-                        <div class="button"><a href="/backend/details/view/<?php echo $product->id ?>" class="btn btn-more">เพิ่มเติม</a></div>
+                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more">เพิ่มเติม</a></div>
                     </div>
                 </div>
             <?php endforeach; ?>
+            <?php if (isset($_GET['brand']) && isset($_GET['model'])){
+                if ($query_package->num_rows() > 0){
+                  echo "พบ ".$query_package->num_rows()." ผลิตภัณฑ์";
+                }else{
+                  echo "ไม่พบผลการค้นหา";
+                }
+              }?>
         </div>
     </div>
 </div>

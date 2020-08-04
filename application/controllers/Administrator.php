@@ -141,10 +141,9 @@ class Administrator extends CI_Controller {
 		$crud->set_theme("bootstrap");
 		$crud->set_table('news')
 	
-		->columns('new_details','news_image','date')
 		->order_by('id','content','date')
 		->set_subject('news Content')
-		->display_as('new_details','Detail')
+		->display_as('news_detail','Detail')
 		->display_as('news_image','Images')
 		->display_as('date','Day');
 	
@@ -229,7 +228,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	
@@ -248,7 +247,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ชีวิตดี๊ดีเมื่อมี SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	
