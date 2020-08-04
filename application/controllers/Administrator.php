@@ -186,9 +186,12 @@ class Administrator extends CI_Controller {
 		->display_as('date',' Day');
 
 	
-			$crud->set_field_upload('image','assets/uploads/Package');
-			$output = $crud->render();
-			$this->_example_output($output);
+		$crud->field_type('package','dropdown',array('Mini Basic 1' => 'Mini Basic 1', 'Mini Basic 3' => 'Mini Basic 3', 'Mini Standard 6' => 'Mini Standard 6', 'Bronze Standard' => 'Bronze Standard', 'Silver Standard' => 'Silver Standard', 'Gold Plus' => 'Gold Plus', 'TCL Standard' => 'TCL Standard', 'Bronze Standard SC' => 'Bronze Standard SC', 'Mittare Bronze Standard' => 'Mittare Bronze Standard', 'Mittare Bronze Standard SC' => 'Mittare Bronze Standard SC', '	
+			Auto Smart Standard' => 'Auto Smart Standard', 'Auto Smart Diamond' => 'Auto Smart Diamond', 'Orico Standard' => 'Orico Standard', 'Orico Platinum' => 'Orico Platinum', 'CIMB Plus' => 'CIMB Plus', 'CIMB Premium' => 'CIMB Premium'));
+		$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+		$crud->set_field_upload('image','assets/uploads/Package');
+		$output = $crud->render();
+		$this->_example_output($output);
 	}
 
 	function rest_server()

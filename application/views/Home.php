@@ -58,7 +58,7 @@ $packages = $query->result();
         <?php endforeach; ?>
       </div>
       <div class="col-12 button">
-      <a href="" class="btn btn-more">
+      <a href="<?php echo base_url(); ?>product" class="btn btn-more">
         เพิ่มเติม</a>
       </div>
     </div>
