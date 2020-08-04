@@ -6,16 +6,15 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
   $currentYear = date('Y');
   $year = intval($_GET['year']);
   $remainYear = $currentYear - $year;
-  $mileage = $_GET['mileage'];
+  $mileage = intval($_GET['mileage']);
 
-  $this->db->select('*');
+  $this->db->select("distinct('car_package.package'), product.package, product.details, product.image, product.id");
   $this->db->from('car_package');
   $this->db->join('product', 'car_package.package_name = product.package');
   $this->db->like("car_package.car_brand", $brand, 'after');
   $this->db->like('car_package.car_model', $model, 'after');
   $this->db->where('car_package.year_limit >', $remainYear);
   $this->db->where('car_package.km_limit >=', $mileage);
-  $this->db->group_by('product.package');
   $this->db->where("product.status", "1");
   $query_package = $this->db->get();
   $products = $query_package->result();
@@ -58,7 +57,9 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
                 </div>
             <?php endforeach; ?>
             <?php if (isset($_GET['brand']) && isset($_GET['model'])){
-                if ($query_package->num_rows() == 0){
+                if ($query_package->num_rows() > 0){
+                  echo "พบ ".$query_package->num_rows()." ผลิตภัณฑ์";
+                }else{
                   echo "ไม่พบผลการค้นหา";
                 }
               }?>

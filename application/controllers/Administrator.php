@@ -228,7 +228,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	
@@ -247,7 +247,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ชีวิตดี๊ดีเมื่อมี SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	
