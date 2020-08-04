@@ -58,7 +58,8 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
             <?php endforeach; ?>
             <?php if (isset($_GET['brand']) && isset($_GET['model'])){
                 if ($query_package->num_rows() > 0){
-                  echo "พบ ".$query_package->num_rows()." ผลิตภัณฑ์";
+                  echo "พบ ".$query_package->num_rows()." แพคเกจของ<br>";
+                  echo $brand . " ". $model. " ". $year ;
                 }else{
                   echo "ไม่พบผลการค้นหา";
                 }
