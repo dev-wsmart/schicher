@@ -43,17 +43,24 @@ $packages = $query->result();
     
       <div class="row rec-product">
         <?php foreach($packages as $package): ?>
-        <div class="col-lg-4 col-md-3 product-item">
+        <div class="col-lg-4 col-md-6 product-item">
           
           
-          <div class="box-title">
+          <!-- <div class="box-title">
             <div class="title"><?php echo $package->package ?></div>
           </div>
           <div class="box-detail">
             <div class="detail"><?php echo $package->detail ?></div>
           </div>
           <img class="frame" src="<?php base_url(); ?>assets/images/frame.png"/>
-          <img class="image" src="<?php base_url(); ?>assets/uploads/Package/<?php echo $package->image ?>"/>
+          <img class="image" src="<?php base_url(); ?>assets/uploads/Package/<?php echo $package->image ?>"/> -->
+          <div class="frame">
+            <div class="box-title">
+              <div class="title"><?php echo $package->package ?></div>
+            </div>
+            <img src="<?php base_url(); ?>assets/uploads/Package/<?php echo $package->image ?>">
+            <div class="des"><?php echo $package->detail ?></div>
+          </div>
         </div>
         <?php endforeach; ?>
       </div>
@@ -76,7 +83,8 @@ $packages = $query->result();
       <div class="col-lg-12">
         <div class="row mx-lg-5 my-lg-4">
           <div class="col-12 col-lg-6">
-          <?php echo $product1s->link_youtrub;?>
+            <?php $youtubeId = substr($product1s->link_youtube, -11); ?>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $youtubeId; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="col-12 col-lg-6">
             <div class="text-left">
@@ -109,7 +117,8 @@ $packages = $query->result();
       <div class="col-lg-12">
         <div class="row mx-lg-5 my-lg-4">
           <div class="col-12 col-lg-6">
-          <?php echo $product2s->link_youtrub;?>
+            <?php $youtubeId = substr($product2s->link_youtube, -11); ?>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $youtubeId; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="col-12 col-lg-6">
             <div class="text-left">
@@ -134,7 +143,7 @@ $packages = $query->result();
 .rec-product {
   margin-top: 30px;
   margin-left: -6px;
-  padding: 0 50px;
+  padding: 0 25px;
   height: 300px;
 }
 .rec-product .box-title {
@@ -142,11 +151,13 @@ $packages = $query->result();
   align-content: center;
   position: absolute;
   z-index: 2;
-  top: 20px;
-  width: 91%;
+  left:0;
+  right:0;
+  top: 25px;
+  width: 100%;
 }
 .rec-product .box-title .title {
-  margin: 0 auto;
+  margin: auto;
   padding: 0 12px;
   font-weight: 600;
   color: #ffffff;
@@ -173,7 +184,7 @@ $packages = $query->result();
   height: 300px;
   border-radius: 50px;
 }
-.frame {
+/* .frame {
   position: relative;
   height: auto;
   width: 100%;
@@ -189,7 +200,7 @@ $packages = $query->result();
   z-index: 0;
   left: 10%;
   padding-top: 6%;
-}
+} */
 .button {
   margin-top: 12px;
   text-align: right;
@@ -219,12 +230,34 @@ $packages = $query->result();
   font-size: 20px;
   font-weight: bold;
 }
+
+.frame {
+  /*width: 300px;*/
+  height: 300px;
+  border: 15px solid #ffffff;
+  background: #a3cfd2;
+  margin: auto;
+  padding: 10px 10px 70px 10px;
+  border-radius: 60px;
+  box-shadow: 0 0 15px #b1b1b1;
+}
+.frame img {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 8px 0px #74aeaf;
+  border-radius: 40px;
+  object-fit: cover;
+}
+.des{
+    margin-top: 12px;
+    text-align: center;
+}
 @media only screen and (max-width: 991px) {
   .rec-product {
-    margin-left: 0;
+    margin-left: 18px;
+    margin-right: 18px;
     padding: 0;
     height: auto;
-    min-height: 500px;
   }
   .rec-product .box-title{
     width: 100%;
@@ -236,7 +269,7 @@ $packages = $query->result();
   }
   .product-item{
     padding-left: 0;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
   .image{
     width: 82%;
