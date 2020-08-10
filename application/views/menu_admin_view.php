@@ -12,14 +12,18 @@
 }
 
 .navbar-default {
-    background-color: #a2ced1;
+    /* background-color: #a2ced1; */
     border-color: #100f0f;
+}
+
+.navbar-brand{
+    color: black !important;
 }
 
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #a2ced1;
+    /* background-color: #a2ced1; */
 }
 
 
