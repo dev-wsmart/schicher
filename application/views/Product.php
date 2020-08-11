@@ -36,8 +36,9 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
             </div>
             <div class="title-text">ผลิตภัณฑ์คุณภาพ</div>
         </div>
-
-        <div class="w-100 mx-5 my-4">
+    </div>
+      <div class="row p-1">
+        <div class="mx-5 my-4">
             <?php foreach($products as $product): ?>
                 <div class="row frame mb-3">
                     <div class="col-lg-4">
@@ -79,6 +80,10 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
 </script>
 
 <style>
+.content-row{
+  display: block;
+}
+
 .frame {
   padding: 10px;
   border: 9px solid #a2ced1;
