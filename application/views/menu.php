@@ -5,7 +5,7 @@
             <td width="50%">
                 <a href="<?php echo base_url(); ?>">
                     <div class="col-md-7 col-lg-5 logo animate__animated animate__fadeInDown">
-                        <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/logo.png" width="100%">
+                        <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/LOGO2.png" width="100%">
                     </div>
                 </a>
             </td>
@@ -28,8 +28,8 @@
 
 <div class="d-md-none d-block" style="margin-bottom: 20px;">
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
-            <img src="<?php echo base_url(); ?>assets/images/logo.png" width="150px">
+        <a class="navbar-brand animate__animated animate__fadeInDown" href="<?php echo base_url(); ?>">
+            <img src="<?php echo base_url(); ?>assets/images/LOGO2.png" width="150px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

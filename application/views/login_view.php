@@ -43,7 +43,7 @@
       $at = array('class' => 'form-signin', 'id' => 'myform','role' => 'form');
        echo form_open('verifylogin',$at); ?>
         <h3 class="form-signin-heading" style='margin:50px 0;'><center>
-      <img  src="<?php echo base_url();?>image/LOGOsmartsure.png" width='100%'>
+      <img  src="<?php echo base_url();?>assets/images/LOGOsmartsure.png" width='100%'>
         </center>
         </h3>
           <?php echo validation_errors(); ?>

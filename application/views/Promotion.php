@@ -23,7 +23,7 @@ $promotions = $query->result();
     <div class="row">
         <?php foreach($promotions as $promotion):  ?>
         <div class="mx-5 mt-2">
-            <div cols="12" class="promotion-title">หัวข้อโปรโมชั่น</div>
+            <div cols="12" class="promotion-title"><?php echo $promotion->title ?></div>
             <div class="frame">
                 <div class="row">
                     <div class="col-lg-4">

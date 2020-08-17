@@ -12,14 +12,18 @@
 }
 
 .navbar-default {
-    background-color: #a2ced1;
+    /* background-color: #a2ced1; */
     border-color: #100f0f;
+}
+
+.navbar-brand{
+    color: black !important;
 }
 
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #a2ced1;
+    /* background-color: #a2ced1; */
 }
 
 
@@ -59,7 +63,7 @@
             <ul class="nav" id="side-menu">
               <li class="sidebar-search" style='text-align:center;'>
 
-                <img class='circle' src='<?php echo base_url();?>image/LOGOsmartsure.png'>
+                <img class='circle' src='<?php echo base_url();?>assets/images/LOGO2.png'>
                     <div class="" >
                      USERNAME :  <font color='#ff7500'> <?php echo $this->session->userdata['logged_in']['username'];?> </font>
                     </div>
