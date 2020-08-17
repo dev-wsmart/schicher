@@ -1,12 +1,18 @@
 body {
-  background-color: #a2ced1 !important;
+  background-color: #012C49 !important;
 }
 .logo {
-  padding: 25px 15px 9px;
+  padding: 15px 15px 9px;
   border-radius: 0 0 10px 10px;
   background-color: #ffffff;
   box-shadow: 0 6px 7px -5px #555555;
 }
+
+.logo img{
+  width: 120px;
+  height: 80px;
+}
+
 .num-basket {
   position: absolute;
   padding-left: 49px;
@@ -29,45 +35,66 @@ body {
   padding: 8px 10px;
   margin: 0 10px;
   font-weight: 100;
-  color: #2c3e50;
+  color: white;
 }
 #nav a:hover {
+  text-decoration: none;
   color: #ffffff;
-  background-color: #000000;
+  background-color: #ffffff31;
   border-radius: 9px;
-  box-shadow: 0 6px 15px -7px #303030;
 }
 #nav a.active {
   font-size: 20px;
   font-weight: 300;
-  color: #ffffff;
-  background-color: #000000;
+  color: #000000;
+  background-color: #ffffff;
   border-radius: 9px;
   box-shadow: 0 6px 15px -7px #303030;
 }
 
 .navbar{
   padding: 0px !important;
-  background-color: #a2ced1 !important;
 }
 
 .navbar .navbar-brand{
-  padding: 20px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   background-color: #ffffff;
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0 6px 7px -5px #555555;
 }
 
-.navbar .active{
-  background-color: #000000;
+.nav-link{
   color: #ffffff !important;
+}
+
+.navbar .navbar-brand img{
+  width: 95px;
+  height: 65px;
+}
+
+.navbar-toggler-icon{
+  color: #ffffff !important;
+}
+
+.navbar .active{
+  background-color: #ffffff;
+  color: #000000 !important;
   border-radius: 10px;
+}
+
+.lang-link{
+  color: #ffffff;
+  padding: 25px 0px 0px 0px; 
+  text-align: right;
+}
+
+.lang-link a{
+  color: #ffffff;
 }
 
 /* content */
 #content {
   background-color: #ffffff;
-  box-shadow: 0 7px 20px -5px #8c8c8c;
   border-radius: 20px;
 }
 .page-title {

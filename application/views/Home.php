@@ -235,7 +235,8 @@ $packages = $query->result();
   /*width: 300px;*/
   height: 300px;
   border: 15px solid #ffffff;
-  background: #a3cfd2;
+  background: #012C49;
+  color: #ffffff;
   margin: auto;
   padding: 10px 10px 70px 10px;
   border-radius: 60px;
@@ -244,7 +245,7 @@ $packages = $query->result();
 .frame img {
   width: 100%;
   height: 100%;
-  box-shadow: 0px 8px 0px #74aeaf;
+  box-shadow: 0px 8px 0px #001726;
   border-radius: 40px;
   object-fit: cover;
 }
