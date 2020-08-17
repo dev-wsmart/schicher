@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Home | Smart Sure',
+			   'title' => 'Schicher',
 			   'content' => 'Home',
 			   
           );

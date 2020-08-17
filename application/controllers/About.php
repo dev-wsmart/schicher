@@ -11,7 +11,7 @@ class About extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'About | Smart Sure',
+			   'title' => 'About | Schicher',
 			   'content' => 'About',
 			   
           );
