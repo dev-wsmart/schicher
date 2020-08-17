@@ -8,20 +8,20 @@
             ข้อมูลของคุณถูกส่งให้ SMART SURE เรียบร้อยแล้ว
             <br />
             เจ้าหน้าที่จะติดต่อกลับภายใน 24 ชั่วโมงค่ะ
-
+            <br/>
             <?php echo "$name";?> <br>
             <?php echo "$email";?> <br>
             <?php echo "$headline";?> <br>
             <?php echo "$message";?> <br>
         </div>
         <div class="mt-5">
-            <img src="<?php base_url(); ?>assets/images/callcenter.png" width="40%" />
+            <img src="<?php echo base_url(); ?>assets/images/callcenter.png" width="40%" />
         </div>
     </div>
 </div>
 <?php
-session_start();
-session_destroy();
+// session_start();
+// session_destroy();
 ?>
 
 <script type="text/javascript">

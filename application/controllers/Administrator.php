@@ -5,7 +5,9 @@ class Administrator extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
+		if (!$this->session->userdata('logged_in')){
+			redirect('./login', 'refresh');
+		}
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->library('Grocery_CRUD');
@@ -108,7 +110,8 @@ class Administrator extends CI_Controller {
 		->display_as('image','Images')
 		->display_as('date','Day ');
 	
-	
+			$crud->field_type('package','dropdown',array('Mini Basic 1' => 'Mini Basic 1', 'Mini Basic 3' => 'Mini Basic 3', 'Mini Standard 6' => 'Mini Standard 6', 'Bronze Standard' => 'Bronze Standard', 'Silver Standard' => 'Silver Standard', 'Gold Plus' => 'Gold Plus', 'TCL Standard' => 'TCL Standard', 'Bronze Standard SC' => 'Bronze Standard SC', 'Mittare Bronze Standard' => 'Mittare Bronze Standard', 'Mittare Bronze Standard SC' => 'Mittare Bronze Standard SC', '	
+			Auto Smart Standard' => 'Auto Smart Standard', 'Auto Smart Diamond' => 'Auto Smart Diamond', 'Orico Standard' => 'Orico Standard', 'Orico Platinum' => 'Orico Platinum', 'CIMB Plus' => 'CIMB Plus', 'CIMB Premium' => 'CIMB Premium'));
 			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
 			$crud->set_field_upload('image','assets/uploads/Product');
 			$output = $crud->render();
@@ -138,12 +141,11 @@ class Administrator extends CI_Controller {
 	function news(){
 		$crud = new grocery_CRUD();
 		$crud->set_theme("bootstrap");
-		$crud->set_table('News')
+		$crud->set_table('news')
 	
-		->columns('new_details','news_image','date')
 		->order_by('id','content','date')
 		->set_subject('news Content')
-		->display_as('new_details','Detail')
+		->display_as('news_detail','Detail')
 		->display_as('news_image','Images')
 		->display_as('date','Day');
 	
@@ -186,10 +188,12 @@ class Administrator extends CI_Controller {
 		->display_as('date',' Day');
 
 	
-		    $crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
-			$crud->set_field_upload('image','assets/uploads/Package');
-			$output = $crud->render();
-			$this->_example_output($output);
+		$crud->field_type('package','dropdown',array('Mini Basic 1' => 'Mini Basic 1', 'Mini Basic 3' => 'Mini Basic 3', 'Mini Standard 6' => 'Mini Standard 6', 'Bronze Standard' => 'Bronze Standard', 'Silver Standard' => 'Silver Standard', 'Gold Plus' => 'Gold Plus', 'TCL Standard' => 'TCL Standard', 'Bronze Standard SC' => 'Bronze Standard SC', 'Mittare Bronze Standard' => 'Mittare Bronze Standard', 'Mittare Bronze Standard SC' => 'Mittare Bronze Standard SC', '	
+			Auto Smart Standard' => 'Auto Smart Standard', 'Auto Smart Diamond' => 'Auto Smart Diamond', 'Orico Standard' => 'Orico Standard', 'Orico Platinum' => 'Orico Platinum', 'CIMB Plus' => 'CIMB Plus', 'CIMB Premium' => 'CIMB Premium'));
+		$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+		$crud->set_field_upload('image','assets/uploads/Package');
+		$output = $crud->render();
+		$this->_example_output($output);
 	}
 
 	function rest_server()
@@ -229,7 +233,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	
@@ -248,7 +252,7 @@ class Administrator extends CI_Controller {
 		->order_by('id','content','date')
 		->set_subject('ชีวิตดี๊ดีเมื่อมี SMART SURE')
 		->display_as('content','Content')
-		->display_as('link_youtrub','Link Youtrube ')
+		->display_as('link_youtube','Link Youtube ')
 		->display_as('date','Day ');
 	
 	

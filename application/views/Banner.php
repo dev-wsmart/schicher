@@ -44,12 +44,12 @@ $this->db->select("*")
             <div class="search-form">
                 <div id="search-result dropdown"></div>
                 <div class="border-form">
-                    <form action="">
-                        <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" required>
-                        <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" required>
-                        <input type="text" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" required>
-                        <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off" required>
-                        <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off" required>
+                    <form action="<?php echo base_url();?>product">
+                        <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" value="<?php if (isset($_GET["brand"])) { echo $_GET["brand"]; } ?>" required>
+                        <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" value="<?php if (isset($_GET["model"])) { echo $_GET["model"]; } ?>" required>
+                        <input type="number" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" min="1900" max="<?php echo date('Y'); ?>" value="<?php if (isset($_GET["year"])) { echo $_GET["year"]; } ?>" required>
+                        <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off" value="<?php if (isset($_GET["cc"])) { echo $_GET["cc"]; } ?>" required>
+                        <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off" value="<?php if (isset($_GET["mileage"])) { echo $_GET["mileage"]; } ?>" required>
                         <button type="submit" class="btn btn-sm">ค้นหา</button>
                     </form>
                     
@@ -79,6 +79,7 @@ $this->db->select("*")
   });
   $("#model").on("keyup", function(){
     var str = $(this).val();
+    brandWording = $("#brand").val();
     modelWording = str;
   });
   $("#cc").on("keyup", function(){
@@ -90,7 +91,8 @@ $this->db->select("*")
     source: function(request, response){
       $.ajax({
       type: "GET",
-      url:"suggest/brand/"+brandWording,
+      data: {"brand": brandWording},
+      url:"suggest/brand",
       dataType: 'json',
       success:function(data)
       {
@@ -109,11 +111,11 @@ $this->db->select("*")
     source: function(request, response){
       $.ajax({
       type: "GET",
-      url:"suggest/model/"+$('#brand').val()+"/"+modelWording,
+      data: {"brand": brandWording, "model": modelWording},
+      url:"suggest/model",
       dataType: 'json',
       success:function(data)
       {
-        console.log(data[0]['name_model']);
         response($.map(data, function (el){
           return {
             label: el.name_model,
@@ -129,7 +131,8 @@ $this->db->select("*")
     source: function(request, response){
       $.ajax({
       type: "GET",
-      url:"suggest/ccs/"+ccWording,
+      data: {"cc": ccWording},
+      url:"suggest/ccs",
       dataType: 'json',
       success:function(data)
       {
@@ -215,6 +218,19 @@ a {
 }
 .search-form button:hover{
     color: #ffffff;
+}
+
+/**/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media only screen and (max-width: 991px){

@@ -7,110 +7,91 @@ $products = $query->row();
 ?>
 
 <div class="detail pb-2">
-    <?php echo $products->details; ?>
-    <!-- <div class="row p-3">
-        <div class="title">
-            <div class="title-circle">
-                <img src="<?php base_url(); ?>assets/images/car.png" />
+    <div class="outside">
+        <div class="inside">
+          <div class="package-title-border">
+            <div class="package-title">
+              <b><?php echo strtoupper($products->package) ?></b>
             </div>
-            <div class="title-text">
-                ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE
-            </div>
-        </div>
-        <div class="inside mx-5">
-          <div class="row">
+          </div>
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               เงื่อนไขการให้บริการ
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
-                มันได้กลายมาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตั้งแต่ศตวรรษที่ 16
+                <?php echo $products->package_condition?>
               </div>
             </div>
           </div>
           <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               ระยะเวลาการรับผิดชอบบริการ
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
+                <?php echo $products->time_period ?>
               </div>
             </div>
           </div>
           <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               รับผิดชอบสูงสุด
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
+                <?php echo $products->responsible ?>
               </div>
             </div>
           </div>
           <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               สิทธิพิเศษ
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
+                <?php echo $products->privilege ?>
               </div>
             </div>
           </div>
           <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               รถที่ไม่สามารถได้รับความคุ้มครอง
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
+                <?php echo $products->except ?>
               </div>
             </div>
           </div>
-          <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               รายละเอียดความคุ้มครอง
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
+                <?php echo $products->cover_detail ?>
               </div>
             </div>
           </div>
-          <hr />
-          <div class="row">
+          <div class="row topic-detail">
             <div class="col-lg-3 font-weight-bold">
               หมายเหตุ
             </div>
             <div class="col-lg-9">
               <div>
-                Lorem Ipsum คืออะไร? Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
-                ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
-                มันได้กลายมาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตั้งแต่ศตวรรษที่
-                16
+                <?php echo $products->mark ?>
               </div>
             </div>
           </div>
         </div>
-        <div class="button">
-          <a href="/backend/customerInfo" class="btn btn-buy">ซื้อผลิตภัณฑ์</a>
-        </div>
-    </div> -->
+    </div>
     <div class="button">
-      <a href="/backend/customerInfo" class="btn btn-buy">ซื้อผลิตภัณฑ์</a>
+      <a href="<?php echo base_url(); ?>customerInfo" class="btn btn-buy">ซื้อผลิตภัณฑ์</a>
     </div>
 </div>
 
@@ -126,25 +107,29 @@ $products = $query->row();
 
 <style>
 .detail{
-  padding: 20px;
   text-align: left;
 }
 
 hr {
   margin: 5px 0;
-  width: 85%;
   background-color: #c4c4c4;
 }
+.outside{
+  padding: 30px 30px 0px 30px;
+}
+
 .inside {
-  height: 800px;
-  margin-top: 30px;
+  background-color: #e5e7e6;
+  min-height: 800px;
   font-size: 15px;
+  padding: 20px 50px;
+  border-radius: 20px;
   text-align: left;
   overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 .inside .col-lg-9 {
-  padding-right: 35px;
+  
 }
 .inside::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -160,11 +145,30 @@ hr {
   background-color: rgb(148, 148, 148);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
+.package-title-border{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.package-title{
+  background-color: #ee8532;
+  text-align: center;
+  display: inline-block;
+  padding: 7px 50px;
+  font-size: 28px;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+}
+
+.topic-detail{
+  margin-bottom: 10px;
+}
+
 .button {
-    width: 95%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin: 10px 30px;
 }
 .btn-buy {
     color: #ffffff;

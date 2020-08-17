@@ -15,16 +15,13 @@ $about = $query->result();
       <div class="content">
         <?php foreach($about as $abouts): ?>
         <div class="row">
-            <div class="col-lg-6 d-none d-sm-block">
+            <div class="col-lg-12 d-none d-sm-block">
             <img src="<?php echo base_url();?>assets/uploads/About/<?php echo $abouts->img_name; ?>" width="100%" alt="" />
             <!-- <img src="<?php echo base_url(); ?>/assets/images/car12.jpg" width="100%" /> -->
             </div>
             
-            <div class="col-lg-6">
-  
-                <p>
-                  <?php echo $abouts->content;?>
-                </p>
+            <div class="col-lg-12 detail">
+              <?php echo $abouts->content;?>
             </div>
         </div>
         <?php endforeach; ?>
@@ -41,3 +38,10 @@ $about = $query->result();
         $('a.about').addClass("active");
     });
 </script>
+
+<style>
+.detail{
+  margin-top: 25px;
+  text-align: left;
+}
+</style>

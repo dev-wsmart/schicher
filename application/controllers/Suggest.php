@@ -3,16 +3,19 @@
 
 class Suggest extends CI_Controller{
 
-    public function brand($query){
+    public function brand(){
+        $brand = $_GET["brand"];
         $this->db->select("*");
         $this->db->from("brands");
-        $this->db->like('brands.name_brand', $query, 'after');
+        $this->db->like('brands.name_brand', $brand, 'after');
         $query = $this->db->get();
         $brands = $query->result();
         echo json_encode($brands);
     }
 
-    public function model($brand, $model){
+    public function model(){
+        $brand = $_GET["brand"];
+        $model = $_GET["model"];
         $this->db->select("*");
         $this->db->from("models");
         $this->db->join('brands', "brands.id_brand = models.id_brand");
@@ -23,7 +26,8 @@ class Suggest extends CI_Controller{
         echo json_encode($models);
     }
 
-    public function ccs($cc){
+    public function ccs(){
+        $cc = $_GET["cc"];
         $this->db->select("*");
         $this->db->from("ccs");
         $this->db->like('ccs.cc', $cc, 'after');
