@@ -1,4 +1,28 @@
 <!--Desktop / Tablet -->
+<input type="hidden" name="Text" value="<?php if(isset($_GET['Text']))echo $_GET['Text']; ?>" >
+
+<?php
+
+if (isset($_GET['Text'])){
+
+	$text = $_GET['Text'];
+
+	$this->db->select("*");
+	$this->db->from("menu");
+	$this->db->where("menu.id_menu", $text);
+	$query = $this->db->get();
+	$menu = $query->result();
+
+}else{
+
+	$this->db->select("*");
+	$this->db->from("menu");
+	$this->db->where("menu.id_menu", "1");
+	$query = $this->db->get();
+	$menu = $query->result();
+}
+
+?>
 <div class="d-none d-md-block">
     <div class="d-flex bd-highlight mb-3">
         <div class ="mr-auto bd-highlight">
@@ -7,22 +31,23 @@
                     <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/schicher-logo.png">
                 </div>
             </a>
-        </div>
+		</div>
         <div class="bd-highlight lang-link">
-            <a href="#">TH</a> /
-            <a href="#">EN</a> /
-            <a href="#">DE</a>
+            <a href="?Text=1">TH</a> /
+            <a href="?Text=2">EN</a> /
+            <a href="?Text=3">DE</a>
         </div>
     </div>
-
-    <div id="nav">
-        <a href="<?php echo base_url();?>" id="home" class="active">หน้าหลัก</a>
-        <a href="<?php echo base_url();?>about" id="about">เกี่ยวกับเรา</a>
-        <a href="<?php echo base_url();?>product" id="product">ซื้อผลิตภัณฑ์</a>
-        <a href="<?php echo base_url();?>promotion" id="promotion">โปรโมชั่น</a>
-        <a href="<?php echo base_url();?>news" id="news">ข่าวสารและกิจกรรม</a>
-        <a href="<?php echo base_url();?>contactus" id="contactus">ติดต่อเรา</a>
-    </div>
+	<?php foreach($menu as $menus): ?>
+		<div id="nav">
+			<a href="<?php echo base_url();?>" id="home" class="active"><?php echo $menus->home; ?></a>
+			<a href="<?php echo base_url();?>about" id="about"><?php echo $menus->about; ?></a>
+			<a href="<?php echo base_url();?>product" id="product"><?php echo $menus->product; ?></a>
+			<a href="<?php echo base_url();?>promotion" id="promotion"><?php echo $menus->promotion; ?></a>
+			<a href="<?php echo base_url();?>news" id="news"><?php echo $menus->news; ?></a>
+			<a href="<?php echo base_url();?>contactus" id="contactus"><?php echo $menus->contactus; ?></a>
+		</div>
+	<?php endforeach; ?>
 </div>
 
 <div class="d-md-none d-block" style="margin-bottom: 20px;">
