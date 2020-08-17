@@ -1,20 +1,19 @@
 <!--Desktop / Tablet -->
 <div class="d-none d-md-block">
-    <table cellspacing="0" cellpadding="0" class="">
-        <tr>
-            <td width="50%">
-                <a href="<?php echo base_url(); ?>">
-                    <div class="col-md-7 col-lg-5 logo animate__animated animate__fadeInDown">
-                        <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/LOGO2.png" width="100%">
-                    </div>
-                </a>
-            </td>
-            <td width="50%" align="right" style="padding: 20px 20px 0;">
-                <img alt="phone" src="<?php echo base_url(); ?>assets/images/phone.png" width="4%" class="pb-2">
-                <span style="margin-left: 15px; color: #ffffff; font-size: 23px; font-weight: bold;">02-002-1234</span>
-            </td>
-        </tr>
-    </table>
+    <div class="d-flex bd-highlight mb-3">
+        <div class ="mr-auto bd-highlight">
+            <a href="<?php echo base_url(); ?>">
+                <div class="logo animate__animated animate__fadeInDown">
+                    <img alt="SmartSure" src="<?php echo base_url(); ?>assets/images/schicher-logo.png">
+                </div>
+            </a>
+        </div>
+        <div class="bd-highlight lang-link">
+            <a href="#">TH</a> /
+            <a href="#">EN</a> /
+            <a href="#">DE</a>
+        </div>
+    </div>
 
     <div id="nav">
         <a href="<?php echo base_url();?>" id="home" class="active">หน้าหลัก</a>
@@ -27,9 +26,9 @@
 </div>
 
 <div class="d-md-none d-block" style="margin-bottom: 20px;">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand animate__animated animate__fadeInDown" href="<?php echo base_url(); ?>">
-            <img src="<?php echo base_url(); ?>assets/images/LOGO2.png" width="150px">
+            <img src="<?php echo base_url(); ?>assets/images/schicher-logo.png" width="150px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

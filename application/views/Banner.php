@@ -13,7 +13,7 @@ $this->db->select("*")
 <div class="banner">
     
     <div class="row mx-lg-4 py-lg-3">
-        <div class="col-lg-9 pr-lg-3 px-0 slide">
+        <div class="col-lg-12 px-0 slide">
             <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <?php foreach($images as $image): ?>
@@ -39,23 +39,7 @@ $this->db->select("*")
                 </a>
             </div>
         </div>
-        <div class="col-lg-3 search">
-            <div class="search-title">ค้นหาผลิตภัณฑ์</div>
-            <div class="search-form">
-                <div id="search-result dropdown"></div>
-                <div class="border-form">
-                    <form action="<?php echo base_url();?>product">
-                        <input type="text" id="brand" name="brand" class="form-control form-control-sm" placeholder="ยี่ห้อ" autocomplete="off" value="<?php if (isset($_GET["brand"])) { echo $_GET["brand"]; } ?>" required>
-                        <input type="text" id="model" name="model" class="form-control form-control-sm" placeholder="รุ่น"autocomplete="off" value="<?php if (isset($_GET["model"])) { echo $_GET["model"]; } ?>" required>
-                        <input type="number" id="year" name="year" class="form-control form-control-sm" placeholder="ปี"autocomplete="off" min="1900" max="<?php echo date('Y'); ?>" value="<?php if (isset($_GET["year"])) { echo $_GET["year"]; } ?>" required>
-                        <input type="text" id="cc" name="cc" class="form-control form-control-sm" placeholder="ขนาดเครื่องยนต์"autocomplete="off" value="<?php if (isset($_GET["cc"])) { echo $_GET["cc"]; } ?>" required>
-                        <input type="text" id="mileage" name="mileage" class="form-control form-control-sm" placeholder="เลขไมล์"autocomplete="off" value="<?php if (isset($_GET["mileage"])) { echo $_GET["mileage"]; } ?>" required>
-                        <button type="submit" class="btn btn-sm">ค้นหา</button>
-                    </form>
-                    
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
 
