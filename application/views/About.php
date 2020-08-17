@@ -20,11 +20,8 @@ $about = $query->result();
             <!-- <img src="<?php echo base_url(); ?>/assets/images/car12.jpg" width="100%" /> -->
             </div>
             
-            <div class="col-lg-12">
-  
-                <p>
-                  <?php echo $abouts->content;?>
-                </p>
+            <div class="col-lg-12 detail">
+              <?php echo $abouts->content;?>
             </div>
         </div>
         <?php endforeach; ?>
@@ -41,3 +38,10 @@ $about = $query->result();
         $('a.about').addClass("active");
     });
 </script>
+
+<style>
+.detail{
+  margin-top: 25px;
+  text-align: left;
+}
+</style>

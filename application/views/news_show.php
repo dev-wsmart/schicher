@@ -1,7 +1,7 @@
 <?php
 $this->db->select("*");
-$this->db->from("News");
-$this->db->where("News.id", $id);
+$this->db->from("news");
+$this->db->where("news.id", $id);
 $query = $this->db->get();
 $news = $query->row();
 ?>

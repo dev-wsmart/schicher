@@ -16,7 +16,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="ss-logo">
-                    <img src="<?php base_url(); ?>assets/images/logo.png" width="100%" />
+                    <img src="<?php base_url(); ?>assets/images/LOGO2.png" width="100%" />
                 </div>
                 <div class="bg-address">
                     <table>

@@ -91,7 +91,7 @@ $packages = $query->result();
             <?php echo mb_substr($product1s->content,0,800,'UTF-8'); ?>...
             </div>
             <div class="col-12 col-lg-11 btn-buy">
-              <a href="<?php base_url();?>product/view/<?php echo $product1s->id;?>">
+              <a href="<?php base_url();?>product">
                 ซื้อผลิตภัณฑ์
               </a>
             </div>
@@ -126,7 +126,7 @@ $packages = $query->result();
             <?php echo mb_substr($product2s->content,0,800,'UTF-8'); ?>...
             </div>
             <div class="col-12 col-lg-11 btn-buy">
-              <a href="<?php base_url();?>product/view/<?php echo $product2s->id;?>" >
+              <a href="<?php base_url();?>product" >
                 ซื้อผลิตภัณฑ์
               </a>
             </div>

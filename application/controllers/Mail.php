@@ -23,6 +23,20 @@ class Mail extends CI_Controller{
   {
     $this->_send_mail();
     //echo "<meta http-equiv=\"refresh\" content=\"1;url='".base_url()."success'\">";
+    
+    $this->load_view();
+  }
+
+  private function load_view(){
+    $contents['cart_session'] = $this->session->userdata('cart_session');
+		$template = array(
+			   'title' => 'Thank You | Smart Sure',
+			   'content' => 'Success',
+			   
+          );
+
+		// $template['content'] = $this->load->view('About',$contents,TRUE);
+		$this->load->view('template',$template, $contents);
   }
 
   private function _send_mail()
@@ -33,25 +47,24 @@ class Mail extends CI_Controller{
     $message = $_POST["message"];
     
 
-  $data = array(
-    'name'    => $name,
-    'email'   => $email,
-    'headline'   => $headline,
-    'message' => $message
- );
+    $data = array(
+      'name'    => $name,
+      'email'   => $email,
+      'headline'   => $headline,
+      'message' => $message
+    );
 
-  $user = array('smartsure@smartsure.co.th');
-  $this->email->from($email);//ชื่อผู้ส่ง
-  $this->email->to($user); //เมล์ของบริษัท
-  $this->email->subject($headline);//หัวเรื่อง
+    $user = array('smartsure@smartsure.co.th');
+    $this->email->from($email);//ชื่อผู้ส่ง
+    $this->email->to($user); //เมล์ของบริษัท
+    $this->email->subject($headline);//หัวเรื่อง
 
-  $this->email->message($this->load->view('Success',$data,TRUE));//ข้อความ
-
-  if($this->email->send()){
-    return TRUE;
-  }else{
+    $this->email->message($this->load->view('Success',$data,TRUE));//ข้อความ
     
-  }
-}			
+    if ($this->email->send()){
+      return TRUE;
+    }
+  
+  }			
 
 }

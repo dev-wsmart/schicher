@@ -63,7 +63,7 @@
             <ul class="nav" id="side-menu">
               <li class="sidebar-search" style='text-align:center;'>
 
-                <img class='circle' src='<?php echo base_url();?>image/LOGOsmartsure.png'>
+                <img class='circle' src='<?php echo base_url();?>assets/images/LOGO2.png'>
                     <div class="" >
                      USERNAME :  <font color='#ff7500'> <?php echo $this->session->userdata['logged_in']['username'];?> </font>
                     </div>
