@@ -66,6 +66,11 @@ if (isset($_GET['Text'])){
                 <a class="promotion nav-item nav-link" href="<?php echo base_url();?>promotion">โปรโมชั่น</a>
                 <a class="news nav-item nav-link" href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a>
                 <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
+                <div class="d-flex justify-content-center lang-link">
+                    <a href="#">TH</a> 
+                    <a href="#">EN</a> 
+                    <a href="#">DE</a>
+                </div>
             </div>
         </div>
     </nav>

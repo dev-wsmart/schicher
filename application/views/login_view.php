@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>SmartSure</title>
+    <title>Schicher</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="LOGOsmartsure.png"/>
     <link rel="bookmark" href="LOGOsmartsure.png"/>
@@ -23,7 +23,6 @@
       body {
         padding-top: 40px;
         padding-bottom: 40px;
-        background-color:#a2ced1;
         /* background:url('<?php echo base_url();?>image/bg_login.jpg') no-repeat center center fixed; */
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -43,7 +42,7 @@
       $at = array('class' => 'form-signin', 'id' => 'myform','role' => 'form');
        echo form_open('verifylogin',$at); ?>
         <h3 class="form-signin-heading" style='margin:50px 0;'><center>
-      <img  src="<?php echo base_url();?>assets/images/LOGOsmartsure.png" width='100%'>
+      <img  src="<?php echo base_url();?>assets/images/schicher-logo-white.png" width='100%'>
         </center>
         </h3>
           <?php echo validation_errors(); ?>

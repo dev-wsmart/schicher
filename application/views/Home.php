@@ -76,7 +76,7 @@ $packages = $query->result();
           <img src="<?php base_url(); ?>assets/images/car.png" />
         </div>
         <div class="title-text">
-          ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE
+          ทำไมต้อง Schicher
         </div>
       </div>
       <?php foreach($product1 as $product1s): ?>
@@ -109,7 +109,7 @@ $packages = $query->result();
           <img src="<?php base_url(); ?>assets/images/car.png" />
         </div>
         <div class="title-text">
-          ชีวิตดี๊ดีเมื่อมี SMART SURE
+          รู้จัก Schicher
         </div>
       </div>
 
@@ -210,8 +210,8 @@ $packages = $query->result();
   padding: 8px 12px 3px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #a2ced1;
-  border: 2px solid #70b3b8;
+  background-color: #012C49;
+  border: 2px solid #000000;
   box-shadow: 2px 2px 3px #b1b1b1;
 }
 .text-left {

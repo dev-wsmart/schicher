@@ -57,7 +57,8 @@ $news = $query->result();
 .frame {
   margin-bottom: 25px;
   padding: 10px;
-  background-color: #a2ced1;
+  background-color: #012C49;
+  color: #ffffff;
   box-shadow: 0 35px 10px -30px #6e6e6e;
 }
 .promotion-title {

@@ -11,7 +11,7 @@ class CustomerInfo extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'ฝากข้อมูลติดต่อกลับ | Smart Sure',
+			   'title' => 'ฝากข้อมูลติดต่อกลับ | Schicher',
 			   'content' => 'Customerinfo',
 			   
           );

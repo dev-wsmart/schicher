@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo base_url($this->uri->segment(1).'');?>">Smartsure | administrator</a>
+        <a class="navbar-brand" href="<?php echo base_url($this->uri->segment(1).'');?>">Schicher | administrator</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -63,7 +63,7 @@
             <ul class="nav" id="side-menu">
               <li class="sidebar-search" style='text-align:center;'>
 
-                <img class='circle' src='<?php echo base_url();?>assets/images/LOGO2.png'>
+                <img class='circle' src='<?php echo base_url();?>assets/images/schicher-logo-white.png'>
                     <div class="" >
                      USERNAME :  <font color='#ff7500'> <?php echo $this->session->userdata['logged_in']['username'];?> </font>
                     </div>
@@ -81,10 +81,10 @@
                             <a href="<?php echo base_url('administrator/packages');?>"><i class="fa fa-circle"></i>&nbsp; ผลิตภัณฑ์แนะนำ</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('administrator/product1');?>"><i class="fa fa-circle"></i>&nbsp; ซื้อผลิตภัณฑ์ง่าย</a>
+                            <a href="<?php echo base_url('administrator/product1');?>"><i class="fa fa-circle"></i>&nbsp; ทำไมต้อง Schicher</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('administrator/product2');?>"><i class="fa fa-circle"></i>&nbsp; ชีวิตดี๊ดีเมื่อมี SMART SURE</a>
+                            <a href="<?php echo base_url('administrator/product2');?>"><i class="fa fa-circle"></i>&nbsp; รู้จัก Schicher</a>
                         </li>
                     </ul>    
                 </li>

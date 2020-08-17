@@ -11,7 +11,7 @@ class Details extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Product Detail | Smart Sure',
+			   'title' => 'Product Detail | Schicher',
 			   'content' => 'Details'
           );
 
@@ -23,7 +23,7 @@ class Details extends CI_Controller {
 	public function view($id=null){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Product Detail | Smart Sure',
+			   'title' => 'Product Detail | Schicher',
 			   'content' => 'Details',
 			   'id' => $id
           );

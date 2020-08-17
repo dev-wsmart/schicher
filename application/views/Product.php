@@ -86,7 +86,7 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
 
 .frame {
   padding: 10px;
-  border: 9px solid #a2ced1;
+  border: 9px solid #012C49;
 }
 .images{
   width: 100%;

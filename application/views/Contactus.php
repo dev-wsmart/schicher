@@ -1,4 +1,4 @@
-<div class="contactus pb-5">
+<div class="contactus">
     <div class="py-4">
         <div class="page-title">ติดต่อเรา</div>
     </div>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="ss-logo">
-                    <img src="<?php base_url(); ?>assets/images/LOGO2.png" width="100%" />
+                    <img src="<?php base_url(); ?>assets/images//schicher-logo.png" width="100%" />
                 </div>
                 <div class="bg-address">
                     <table>
@@ -57,6 +57,9 @@
 </script>
 
 <style>
+.contactus{
+    padding-bottom: 100px;
+}
 .content{
   margin-bottom: 140px;
   box-shadow: -80px 115px 20px -105px #5a5a5a;
@@ -70,6 +73,7 @@
   box-shadow: 0 5px 10px -3px #757575;
 }
 .ss-logo {
+
   margin: 20px 60px;
   padding: 10px 30px;
   background-color: #ffffff;

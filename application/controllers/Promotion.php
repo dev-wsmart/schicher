@@ -11,7 +11,7 @@ class Promotion extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Promotion | Smart Sure',
+			   'title' => 'Promotion | Schicher',
 			   'content' => 'Promotion'
 			   
           );
@@ -25,7 +25,7 @@ class Promotion extends CI_Controller {
 
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template=array(
-		 'title'   => 'Promotion Show | Smart Sure',
+		 'title'   => 'Promotion Show | Schicher',
 		 'content' => 'promotion_show'
 		 ,
 		 'id' => $id

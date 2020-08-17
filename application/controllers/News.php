@@ -11,7 +11,7 @@ class News extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'News | Smart Sure',
+			   'title' => 'News | Schicher',
 			   'content' => 'News'
 			   
           );

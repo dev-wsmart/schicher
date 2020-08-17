@@ -11,7 +11,7 @@ class Product extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Product | Smart Sure',
+			   'title' => 'Product | Schicher',
 			   'content' => 'Product'
 			   
           );
