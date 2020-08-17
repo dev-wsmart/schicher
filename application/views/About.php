@@ -19,10 +19,6 @@ $about = $query->result();
             <img src="<?php echo base_url();?>assets/uploads/About/<?php echo $abouts->img_name; ?>" width="100%" alt="" />
             <!-- <img src="<?php echo base_url(); ?>/assets/images/car12.jpg" width="100%" /> -->
             </div>
-            
-            <div class="col-lg-12 detail">
-              <?php echo $abouts->content;?>
-            </div>
         </div>
         <?php endforeach; ?>
       </div>
