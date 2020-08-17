@@ -1,26 +1,16 @@
 <!--Desktop / Tablet -->
-<input type="hidden" name="Text" value="<?php if(isset($_GET['Text']))echo $_GET['Text']; ?>" >
 
 <?php
-
-if (isset($_GET['Text'])){
-
-	$text = $_GET['Text'];
-
-	$this->db->select("*");
-	$this->db->from("menu");
-	$this->db->where("menu.id_menu", $text);
-	$query = $this->db->get();
-	$menu = $query->result();
-
-}else{
+    if (!$this->session->userdata("language")){
+        $this->session->set_userdata("language", 1);
+    }
+    $lang_id = $this->session->userdata("language");
 
 	$this->db->select("*");
 	$this->db->from("menu");
-	$this->db->where("menu.id_menu", "1");
+	$this->db->where("menu.id_menu", $lang_id);
 	$query = $this->db->get();
 	$menu = $query->result();
-}
 
 ?>
 <div class="d-none d-md-block">
@@ -33,9 +23,9 @@ if (isset($_GET['Text'])){
             </a>
 		</div>
         <div class="bd-highlight lang-link">
-            <a href="?Text=1">TH</a> /
-            <a href="?Text=2">EN</a> /
-            <a href="?Text=3">DE</a>
+            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=1" class="<?php if($this->session->userdata("language") == 1) { echo "active"; } ?>">TH</a> /
+            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=2" class="<?php if($this->session->userdata("language") == 2) { echo "active"; } ?>">EN</a> /
+            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=3" class="<?php if($this->session->userdata("language") == 3) { echo "active"; } ?>">DE</a>
         </div>
     </div>
 	<?php foreach($menu as $menus): ?>
