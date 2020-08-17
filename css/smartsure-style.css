@@ -99,6 +99,16 @@ body {
   background-color: #ffffff31;
 }
 
+.lang-link .active{
+  background-color: white;
+  color: #000000;
+}
+
+.lang-link .active:hover{
+  background-color: white;
+  color: #000000;
+}
+
 /* content */
 #content {
   background-color: #ffffff;
