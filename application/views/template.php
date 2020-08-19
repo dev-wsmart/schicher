@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    if (!$this->session->userdata("language")){
+        $this->session->set_userdata("language", "thai");
+    }
+    $this->lang->load("user_ui", $this->session->userdata("language")); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo  $title; ?></title>

@@ -9,6 +9,7 @@ class About extends CI_Controller {
 		}
 
 	public function index(){
+		$this->lang->load("user_ui","english");
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
 			   'title' => 'About | Schicher',

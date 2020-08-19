@@ -1,17 +1,17 @@
-<div class="contactus">
+<div class="contactus-content">
     <div class="py-4">
-        <div class="page-title">ติดต่อเรา</div>
+        <div class="page-title"><?php echo $this->lang->line('contactus'); ?></div>
     </div>
     <div class="mx-lg-5">
         <div class="content row">
             <div class="col-lg-7">
 
                 <form action="<?php base_url();?>Mail/Send" method="POST" parsley-validate>
-                    <input type="text" name="name" class="form-control form-control-sm my-1" placeholder="Name">
-                    <input type="text" name="email" class="form-control form-control-sm my-1" placeholder="Email address">
-                    <input type="text" name="headline" class="form-control form-control-sm my-1" placeholder="Subject">
-                    <textarea name="message" cols="30" rows="6" class="form-control form-control-sm my-1" placeholder="Your message"></textarea>
-                    <button type="submit" class="btn btn-sm btn-send mt-4">Send</button>
+                    <input type="text" name="name" class="form-control form-control-sm my-1" placeholder="<?php echo $this->lang->line('name'); ?>">
+                    <input type="text" name="email" class="form-control form-control-sm my-1" placeholder="<?php echo $this->lang->line('mail'); ?>">
+                    <input type="text" name="headline" class="form-control form-control-sm my-1" placeholder="<?php echo $this->lang->line('subject'); ?>">
+                    <textarea name="message" cols="30" rows="6" class="form-control form-control-sm my-1" placeholder="<?php echo $this->lang->line('message'); ?>"></textarea>
+                    <button type="submit" class="btn btn-sm btn-send mt-4"><?php echo $this->lang->line('send'); ?></button>
                 </form>
             </div>
             <div class="col-lg-5">
@@ -57,7 +57,7 @@
 </script>
 
 <style>
-.contactus{
+.contactus-content{
     padding-bottom: 100px;
 }
 .content{
