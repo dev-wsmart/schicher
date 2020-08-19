@@ -4,6 +4,7 @@ $this->db->from("about");
 $this->db->where("about.status", "1");
 $query = $this->db->get();
 $about = $query->result();
+
 ?>
 
 

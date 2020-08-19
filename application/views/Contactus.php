@@ -1,4 +1,4 @@
-<div class="contactus">
+<div class="contactus-content">
     <div class="py-4">
         <div class="page-title">ติดต่อเรา</div>
     </div>
@@ -57,7 +57,7 @@
 </script>
 
 <style>
-.contactus{
+.contactus-content{
     padding-bottom: 100px;
 }
 .content{

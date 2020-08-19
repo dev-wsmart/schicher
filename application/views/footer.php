@@ -2,18 +2,18 @@
 <div id="footer" class="row">
     <div class="col-12 col-lg-6 footer-left">
         <div class="sitemap">
-            <div class="sitemap-title">Site Map</div>
+            <div class="sitemap-title"><?php echo $this->lang->line('sitemap'); ?></div>
             <div class="row">
                 <div class="col-lg-6 sitemap-left">
-                    <a href="<?php echo base_url();?>">หน้าหลัก</a><br>
-                    <a href="<?php echo base_url();?>about">เกี่ยวกับเรา</a><br>
-					<a href="<?php echo base_url();?>service">บริการของเรา</a>
+                    <a href="<?php echo base_url();?>"><?php echo $this->lang->line('home'); ?></a><br>
+                    <a href="<?php echo base_url();?>about"><?php echo $this->lang->line('about'); ?></a><br>
+					<a href="<?php echo base_url();?>service"><?php echo $this->lang->line('service'); ?></a>
                 </div>
                 <div class="col-lg-6 sitemap-right">
-					<a href="<?php echo base_url();?>partner">Partner</a><br>
-                    <a href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a><br>
-                    <a href="<?php echo base_url();?>gallery">แกลลอรี่</a><br>
-					<a href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
+					<a href="<?php echo base_url();?>partner"><?php echo $this->lang->line('partner'); ?></a><br>
+                    <a href="<?php echo base_url();?>news"><?php echo $this->lang->line('news'); ?></a><br>
+                    <a href="<?php echo base_url();?>gallery"><?php echo $this->lang->line('gallery'); ?></a><br>
+					<a href="<?php echo base_url();?>contactus"><?php echo $this->lang->line('contactus'); ?></a>
                 </div>
             </div>
         </div>
