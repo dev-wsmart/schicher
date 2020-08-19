@@ -23,8 +23,8 @@
             </a>
 		</div>
         <div class="bd-highlight lang-link">
-            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=1" class="<?php if($this->session->userdata("language") == 1) { echo "active"; } ?>">TH</a> /
-            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=2" class="<?php if($this->session->userdata("language") == 2) { echo "active"; } ?>">EN</a> /
+            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=1" class="<?php if($this->session->userdata("language") == 1) { echo "active"; } ?>">TH</a> |
+            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=2" class="<?php if($this->session->userdata("language") == 2) { echo "active"; } ?>">EN</a> |
             <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=3" class="<?php if($this->session->userdata("language") == 3) { echo "active"; } ?>">DE</a>
         </div>
     </div>
@@ -32,9 +32,10 @@
 		<div id="nav">
 			<a href="<?php echo base_url();?>" id="home" class="active"><?php echo $menus->home; ?></a>
 			<a href="<?php echo base_url();?>about" id="about"><?php echo $menus->about; ?></a>
-			<a href="<?php echo base_url();?>product" id="product"><?php echo $menus->product; ?></a>
-			<a href="<?php echo base_url();?>promotion" id="promotion"><?php echo $menus->promotion; ?></a>
+			<a href="<?php echo base_url();?>service" id="service"><?php echo $menus->service; ?></a>
+			<a href="<?php echo base_url();?>partner" id="partner"><?php echo $menus->partner; ?></a>
 			<a href="<?php echo base_url();?>news" id="news"><?php echo $menus->news; ?></a>
+			<a href="<?php echo base_url();?>gallery" id="gallery"><?php echo $menus->gallery; ?></a>
 			<a href="<?php echo base_url();?>contactus" id="contactus"><?php echo $menus->contactus; ?></a>
 		</div>
 	<?php endforeach; ?>
@@ -52,9 +53,10 @@
             <div class="navbar-nav" style="padding-top: 20px;">
                 <a class="home nav-item nav-link active" href="<?php echo base_url();?>">หน้าหลัก <span class="sr-only">(current)</span></a>
                 <a class="about nav-item nav-link" href="<?php echo base_url();?>about">เกี่ยวกับเรา</a>
-                <a class="product nav-item nav-link" href="<?php echo base_url();?>product">ซื้อผลิตภัณฑ์</a>
-                <a class="promotion nav-item nav-link" href="<?php echo base_url();?>promotion">โปรโมชั่น</a>
+                <a class="service nav-item nav-link" href="<?php echo base_url();?>service">บริการของเรา</a>
+                <a class="partner nav-item nav-link" href="<?php echo base_url();?>partner">Partner</a>
                 <a class="news nav-item nav-link" href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a>
+                <a class="gallery nav-item nav-link" href="<?php echo base_url();?>gallery">แกลลอรี่</a>
                 <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
                 <div class="d-flex justify-content-center lang-link">
                     <a href="#">TH</a> 
