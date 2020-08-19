@@ -18,6 +18,8 @@ $lang['know'] = 'รู้จัก Schicher';
 $lang['buyproduct'] = 'ซื้อผลิตภัณฑ์';
 $lang['more'] = 'เพิ่มเติม';
 
+$lang['qualityservice'] = "บริการคุณภาพ";
+
 $lang['name'] = "ชื่อ";
 $lang['mail'] = "อีเมล";
 $lang['subject'] = "หัวข้อ";

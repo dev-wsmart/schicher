@@ -34,7 +34,7 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
             <div class="title-circle">
                 <img src="<?php echo base_url(); ?>/assets/images/car.png" />
             </div>
-            <div class="title-text">บริการคุณภาพ</div>
+            <div class="title-text"><?php echo $this->lang->line('qualityservice'); ?></div>
         </div>
     </div>
       <div class="row p-1">
