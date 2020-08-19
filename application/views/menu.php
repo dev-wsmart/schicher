@@ -31,10 +31,8 @@
             <div class="service-dropdown">
                 <a href="<?php echo base_url();?>service" id="service"><?php echo $this->lang->line('service'); ?></a>
                 <div class="nav-dropdown">
-                    <ul>
-                        <li><a href="<?php echo base_url();?>service"><?php echo $this->lang->line('qualityservice'); ?></a></li>
-                        <li><a href="#">ฉับไว</a></li>
-                    </ul>
+                    <a href="<?php echo base_url();?>service"><?php echo $this->lang->line('qualityservice'); ?></a>
+                    <a href="<?php echo base_url(); ?>customerinfo"><?php echo $this->lang->line('callback');?></a>
                 </div>
             </div>
             <a href="<?php echo base_url();?>partner" id="partner"><?php echo $this->lang->line('partner'); ?></a>

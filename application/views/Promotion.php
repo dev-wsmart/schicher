@@ -15,7 +15,7 @@ $promotions = $query->result();
                     <img src="<?php echo base_url(); ?>/assets/images/car.png" />
                 </div>
                 <div class="title-text">
-                โปรโมชั่น
+                <?php echo $this->lang->line('promotion'); ?>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ $promotions = $query->result();
                             <?php echo mb_substr($promotion->details,0,450,'UTF-8'); ?>...
                         </div>
                         <div class="button">
-                            <a class="btn btn-more" href="<?php base_url();?>promotion/view/<?php echo $promotion->id;?>">อ่านต่อ</a>
+                            <a class="btn btn-more" href="<?php base_url();?>promotion/view/<?php echo $promotion->id;?>"><?php echo $this->lang->line('read'); ?></a>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
             <div class="title-circle">
                 <img src="<?php echo base_url(); ?>/assets/images/car.png" />
             </div>
-            <div class="title-text">Partner</div>
+            <div class="title-text"><?php echo $this->lang->line('partner'); ?></div>
         </div>
     </div>
       <div class="row p-1">
@@ -49,11 +49,11 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
                     </div>
               
                     <div class="col-lg-8">
-                        <div class="details-title">รายละเอียดผลิตภัณฑ์</div>
+                        <div class="details-title"><?php echo $this->lang->line('productdetail'); ?></div>
                         <div class="details">
                           <?php echo mb_substr($product->details,0,600,'UTF-8'); ?>...
                         </div>
-                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more">เพิ่มเติม</a></div>
+                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
                     </div>
                 </div>
             <?php endforeach; ?>

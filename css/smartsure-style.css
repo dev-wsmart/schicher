@@ -73,25 +73,16 @@ body {
   display: block;
 }
 
-.nav-dropdown ul{
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-.nav-dropdown li{
-  display: list-item;
-}
-
-.nav-dropdown li a{
+.nav-dropdown a{
   text-align: left;
   border-radius: 0px !important;
   color: black !important;
   display: block;
+  min-width: 200px;
   margin: 0px !important;
 }
 
-.nav-dropdown li a:hover{
+.nav-dropdown a:hover{
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
