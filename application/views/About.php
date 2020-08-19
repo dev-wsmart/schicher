@@ -4,12 +4,13 @@ $this->db->from("about");
 $this->db->where("about.status", "1");
 $query = $this->db->get();
 $about = $query->result();
+
 ?>
 
 
 <div class="about pb-5">
     <div class="py-4">
-      <div class="page-title">เกี่ยวกับเรา</div>
+      <div class="page-title"><?php echo $this->lang->line('about'); ?></div>
     </div>
     <div class="mx-lg-5">
       <div class="content">

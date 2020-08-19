@@ -1,17 +1,14 @@
 <!--Desktop / Tablet -->
 
 <?php
+
+    const TH = 'thai';
+    const EN = 'english';
+    const DE = 'german';
+
     if (!$this->session->userdata("language")){
-        $this->session->set_userdata("language", 1);
+        $this->session->set_userdata("language", TH);
     }
-    $lang_id = $this->session->userdata("language");
-
-	$this->db->select("*");
-	$this->db->from("menu");
-	$this->db->where("menu.id_menu", $lang_id);
-	$query = $this->db->get();
-	$menu = $query->result();
-
 ?>
 <div class="d-none d-md-block">
     <div class="d-flex bd-highlight mb-3">
@@ -23,22 +20,21 @@
             </a>
 		</div>
         <div class="bd-highlight lang-link">
-            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=1" class="<?php if($this->session->userdata("language") == 1) { echo "active"; } ?>">TH</a> |
-            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=2" class="<?php if($this->session->userdata("language") == 2) { echo "active"; } ?>">EN</a> |
-            <a href="<?php echo base_url(); ?>/language?url=<?php echo current_url(); ?>&lang=3" class="<?php if($this->session->userdata("language") == 3) { echo "active"; } ?>">DE</a>
+            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.TH ?>" class="<?php if($this->session->userdata("language") == TH) { echo "active"; } ?>">TH</a> |
+            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.EN ?>" class="<?php if($this->session->userdata("language") == EN) { echo "active"; } ?>">EN</a> |
+            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.DE ?>" class="<?php if($this->session->userdata("language") == DE) { echo "active"; } ?>">DE</a>
         </div>
     </div>
-	<?php foreach($menu as $menus): ?>
 		<div id="nav">
-			<a href="<?php echo base_url();?>" id="home" class="active"><?php echo $menus->home; ?></a>
-			<a href="<?php echo base_url();?>about" id="about"><?php echo $menus->about; ?></a>
-			<a href="<?php echo base_url();?>service" id="service"><?php echo $menus->service; ?></a>
-			<a href="<?php echo base_url();?>partner" id="partner"><?php echo $menus->partner; ?></a>
-			<a href="<?php echo base_url();?>news" id="news"><?php echo $menus->news; ?></a>
-			<a href="<?php echo base_url();?>gallery" id="gallery"><?php echo $menus->gallery; ?></a>
-			<a href="<?php echo base_url();?>contactus" id="contactus"><?php echo $menus->contactus; ?></a>
+			<a href="<?php echo base_url();?>" id="home" class="active"><?php echo $this->lang->line('home'); ?></a>
+			<a href="<?php echo base_url();?>about" id="about"><?php echo $this->lang->line('about'); ?></a>
+			<a href="<?php echo base_url();?>service"><?php echo $this->lang->line('service'); ?></a>
+            <a href="<?php echo base_url();?>partner"><?php echo $this->lang->line('partner'); ?></a>
+			<a href="<?php echo base_url();?>promotion" id="promotion"><?php echo $this->lang->line('promotion'); ?></a>
+			<a href="<?php echo base_url();?>news" id="news"><?php echo $this->lang->line('news'); ?></a>
+            <a href="<?php echo base_url();?>gallery"><?php echo $this->lang->line('gallery'); ?></a>
+			<a href="<?php echo base_url();?>contactus" id="contactus"><?php echo $this->lang->line('contactus'); ?></a>
 		</div>
-	<?php endforeach; ?>
 </div>
 
 <div class="d-md-none d-block" style="margin-bottom: 20px;">
@@ -51,17 +47,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav" style="padding-top: 20px;">
-                <a class="home nav-item nav-link active" href="<?php echo base_url();?>">หน้าหลัก <span class="sr-only">(current)</span></a>
-                <a class="about nav-item nav-link" href="<?php echo base_url();?>about">เกี่ยวกับเรา</a>
-                <a class="service nav-item nav-link" href="<?php echo base_url();?>service">บริการของเรา</a>
-                <a class="partner nav-item nav-link" href="<?php echo base_url();?>partner">Partner</a>
-                <a class="news nav-item nav-link" href="<?php echo base_url();?>news">ข่าวสารและกิจกรรม</a>
-                <a class="gallery nav-item nav-link" href="<?php echo base_url();?>gallery">แกลลอรี่</a>
-                <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus">ติดต่อเรา</a>
+                <a class="home nav-item nav-link active" href="<?php echo base_url();?>"><?php echo $this->lang->line('home'); ?> <span class="sr-only">(current)</span></a>
+                <a class="about nav-item nav-link" href="<?php echo base_url();?>about"><?php echo $this->lang->line('about'); ?></a>
+                <a class="service nav-item nav-link" href="<?php echo base_url();?>service"><?php echo $this->lang->line('service'); ?></a>
+                <a class="partner nav-item nav-link" href="<?php echo base_url();?>partner"><?php echo $this->lang->line('partner'); ?></a>
+                <a class="promotion nav-item nav-link" href="<?php echo base_url();?>promotion"><?php echo $this->lang->line('promotion'); ?></a>
+                <a class="news nav-item nav-link" href="<?php echo base_url();?>news"><?php echo $this->lang->line('news'); ?></a>
+                <a class="gallery nav-item nav-link" href="<?php echo base_url();?>gallery"><?php echo $this->lang->line('gallery'); ?></a>
+                <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus"><?php echo $this->lang->line('contactus'); ?></a>
                 <div class="d-flex justify-content-center lang-link">
-                    <a href="#">TH</a> 
-                    <a href="#">EN</a> 
-                    <a href="#">DE</a>
+                    <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.TH ?>" class="<?php if($this->session->userdata("language") == TH) { echo "active"; } ?>">TH</a> |
+                    <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.EN ?>" class="<?php if($this->session->userdata("language") == EN) { echo "active"; } ?>">EN</a> |
+                    <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.DE ?>" class="<?php if($this->session->userdata("language") == DE) { echo "active"; } ?>">DE</a>
                 </div>
             </div>
         </div>
