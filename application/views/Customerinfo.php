@@ -15,7 +15,6 @@
               <input type="text" name="brand" id="brand" placeholder="ยี่ห้อ" class="form-control form-control-sm" required>
               <input type="text" name="model" id="model" placeholder="รุ่น" class="form-control form-control-sm" required>
               <input type="text" name="year" id="year" placeholder="ปี" class="form-control form-control-sm" required>
-              <input type="text" name="cc" id="cc" placeholder="ขนาดเครื่องยนต์" class="form-control form-control-sm" required>
               <input type="text" name="mileage" id="mileage" placeholder="เลขไมล์" class="form-control form-control-sm" required>
             </div>
             <div class="col-lg-6 form-right">
@@ -23,16 +22,18 @@
               <input type="text" name="lname" id="lname" placeholder="นามสกุล" class="form-control form-control-sm" required>
               <input type="text" name="tel" id="tel" placeholder="เบอร์โทร" class="form-control form-control-sm" required>
               <input type="text" name="email" id="email" placeholder="อีเมล์" class="form-control form-control-sm" required>
-              <div class="button">
-                <button type="submit" class="btn btn-submit">ติดต่อกลับ</button>
+						</div>
+						<div class="col-lg-12 button" align="right">
+                <button type="submit" class="btn btn-dark" style="margin-right: -15px;margin-top:5px">ติดต่อกลับ</button>
               </div>
-            </div>
           </div>
         </form>
       </div>
       <div class="mt-2 mx-auto">
-        <div style="font-size: 25px; font-weight: 600;">Thank You</div>
-        <div><img src="<?php base_url(); ?>assets/images/logo.png" width="25%" /></div>
+        <div style="font-size: 22px; font-weight: 600;">Thank You</div>
+        <div>
+					<img src="<?php base_url(); ?>assets/images/schicher-logo-white.png" width="10%" style="border-radius: 10%;box-shadow: 1px 3px 5px 1px #888888;" />
+				</div>
       </div>
     </div>
 </div>
@@ -40,10 +41,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#product').addClass("active");
+        $('#service').addClass("active");
         
         $('.navbar-nav a').removeClass("active");
-        $('a.product').addClass("active");
+        $('a.service').addClass("active");
     });
 </script>
 
@@ -134,17 +135,17 @@ form {
 }
 .form-left {
   padding: 10px 20px;
-  background-color: #a2ced1;
+  background-color: #012c49;
   border-right: 15px solid #ffffff;
 }
 .form-right {
   padding: 10px 20px;
-  background-color: #a2ced1;
+  background-color: #012c49;
   border-left: 15px solid #ffffff;
 }
 input[type="text"] {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .button {
   display: flex;
