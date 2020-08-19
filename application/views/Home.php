@@ -36,7 +36,7 @@ $packages = $query->result();
           </div>
           
           <div class="title-text">
-            ผลิตภัณฑ์แนะนำ
+            <?php echo $this->lang->line('recommend'); ?>
           </div>
         </div>
       </div>
@@ -44,16 +44,6 @@ $packages = $query->result();
       <div class="row rec-product">
         <?php foreach($packages as $package): ?>
         <div class="col-lg-4 col-md-6 product-item">
-          
-          
-          <!-- <div class="box-title">
-            <div class="title"><?php echo $package->package ?></div>
-          </div>
-          <div class="box-detail">
-            <div class="detail"><?php echo $package->detail ?></div>
-          </div>
-          <img class="frame" src="<?php base_url(); ?>assets/images/frame.png"/>
-          <img class="image" src="<?php base_url(); ?>assets/uploads/Package/<?php echo $package->image ?>"/> -->
           <div class="frame">
             <div class="box-title">
               <div class="title"><?php echo $package->package ?></div>
@@ -66,7 +56,7 @@ $packages = $query->result();
       </div>
       <div class="col-12 button">
       <a href="<?php echo base_url(); ?>product" class="btn btn-more">
-        เพิ่มเติม</a>
+        <?php echo $this->lang->line('more');?></a>
       </div>
     </div>
     <!-- ซื้อผลิตภัณฑ์ง่าย ๆ กับ SMART SURE -->
@@ -76,7 +66,7 @@ $packages = $query->result();
           <img src="<?php base_url(); ?>assets/images/car.png" />
         </div>
         <div class="title-text">
-          ทำไมต้อง Schicher
+          <?php echo $this->lang->line('why'); ?>
         </div>
       </div>
       <?php foreach($product1 as $product1s): ?>
@@ -92,7 +82,7 @@ $packages = $query->result();
             </div>
             <div class="col-12 col-lg-11 btn-buy">
               <a href="<?php base_url();?>product">
-                ซื้อผลิตภัณฑ์
+                <?php echo $this->lang->line('buyproduct');?>
               </a>
             </div>
           </div>
@@ -109,7 +99,7 @@ $packages = $query->result();
           <img src="<?php base_url(); ?>assets/images/car.png" />
         </div>
         <div class="title-text">
-          รู้จัก Schicher
+            <?php echo $this->lang->line('know');?>
         </div>
       </div>
 
@@ -127,7 +117,7 @@ $packages = $query->result();
             </div>
             <div class="col-12 col-lg-11 btn-buy">
               <a href="<?php base_url();?>product" >
-                ซื้อผลิตภัณฑ์
+                <?php echo $this->lang->line('buyproduct');?>
               </a>
             </div>
           </div>

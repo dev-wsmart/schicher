@@ -12,4 +12,15 @@ $lang['contactus'] = 'ติดต่อเรา';
 
 $lang['sitemap'] = 'แผงผังเว็บไซต์';
 
+$lang['recommend'] = "ผลิตภัณฑ์แนะนำ";
+$lang['why'] = 'ทำไมต้อง Schicher';
+$lang['know'] = 'รู้จัก Schicher';
+$lang['buyproduct'] = 'ซื้อผลิตภัณฑ์';
+$lang['more'] = 'เพิ่มเติม';
+
+$lang['name'] = "ชื่อ";
+$lang['mail'] = "อีเมล";
+$lang['subject'] = "หัวข้อ";
+$lang['message'] = "ข้อความ";
+$lang['send'] = "ส่ง";
 ?>

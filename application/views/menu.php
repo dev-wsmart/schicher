@@ -49,11 +49,11 @@
             <div class="navbar-nav" style="padding-top: 20px;">
                 <a class="home nav-item nav-link active" href="<?php echo base_url();?>"><?php echo $this->lang->line('home'); ?> <span class="sr-only">(current)</span></a>
                 <a class="about nav-item nav-link" href="<?php echo base_url();?>about"><?php echo $this->lang->line('about'); ?></a>
-                <a class="service nav-item nav-link" href="<?php echo base_url();?>service">บริการของเรา</a>
-                <a class="partner nav-item nav-link" href="<?php echo base_url();?>partner">Partner</a>
+                <a class="service nav-item nav-link" href="<?php echo base_url();?>service"><?php echo $this->lang->line('service'); ?></a>
+                <a class="partner nav-item nav-link" href="<?php echo base_url();?>partner"><?php echo $this->lang->line('partner'); ?></a>
                 <a class="promotion nav-item nav-link" href="<?php echo base_url();?>promotion"><?php echo $this->lang->line('promotion'); ?></a>
                 <a class="news nav-item nav-link" href="<?php echo base_url();?>news"><?php echo $this->lang->line('news'); ?></a>
-                <a class="gallery nav-item nav-link" href="<?php echo base_url();?>gallery">แกลลอรี่</a>
+                <a class="gallery nav-item nav-link" href="<?php echo base_url();?>gallery"><?php echo $this->lang->line('gallery'); ?></a>
                 <a class="contactus nav-item nav-link" href="<?php echo base_url();?>contactus"><?php echo $this->lang->line('contactus'); ?></a>
                 <div class="d-flex justify-content-center lang-link">
                     <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.TH ?>" class="<?php if($this->session->userdata("language") == TH) { echo "active"; } ?>">TH</a> |
