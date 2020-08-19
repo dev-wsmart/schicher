@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="mx-5 my-3 w-100">
-        <form action="">
+        <form name ="contactinput" action="CustomerInfo/save_contactinput" method="post">
           <div class="row">
             <div class="col-lg-6 form-left">
               <input type="text" name="brand" id="brand" placeholder="ยี่ห้อ" class="form-control form-control-sm" required>
