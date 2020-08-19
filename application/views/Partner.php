@@ -72,10 +72,10 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#product').addClass("active");
+        $('#partner').addClass("active");
 
         $('.navbar-nav a').removeClass("active");
-        $('a.product').addClass("active");
+        $('a.partner').addClass("active");
     });
 </script>
 

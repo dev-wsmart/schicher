@@ -45,10 +45,10 @@ $news = $query->result();
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#news').addClass("active");
+        $('#gallery').addClass("active");
         
         $('.navbar-nav a').removeClass("active");
-        $('a.news').addClass("active");
+        $('a.gallery').addClass("active");
     });
 </script>
 
