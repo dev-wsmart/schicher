@@ -27,14 +27,21 @@
     </div>
 		<div id="nav">
 			<a href="<?php echo base_url();?>" id="home" class="active"><?php echo $this->lang->line('home'); ?></a>
-			<a href="<?php echo base_url();?>about" id="about"><?php echo $this->lang->line('about'); ?></a>
-			<a href="<?php echo base_url();?>service" id="service"><?php echo $this->lang->line('service'); ?></a>
+            <a href="<?php echo base_url();?>about" id="about"><?php echo $this->lang->line('about'); ?></a>
+            <div class="service-dropdown">
+                <a href="<?php echo base_url();?>service" id="service"><?php echo $this->lang->line('service'); ?></a>
+                <div class="nav-dropdown">
+                    <a href="<?php echo base_url();?>service"><?php echo $this->lang->line('qualityservice'); ?></a>
+                    <a href="<?php echo base_url(); ?>customerinfo"><?php echo $this->lang->line('callback');?></a>
+                </div>
+            </div>
             <a href="<?php echo base_url();?>partner" id="partner"><?php echo $this->lang->line('partner'); ?></a>
 			<a href="<?php echo base_url();?>promotion" id="promotion"><?php echo $this->lang->line('promotion'); ?></a>
 			<a href="<?php echo base_url();?>news" id="news"><?php echo $this->lang->line('news'); ?></a>
             <a href="<?php echo base_url();?>gallery" id="gallery"><?php echo $this->lang->line('gallery'); ?></a>
 			<a href="<?php echo base_url();?>contactus" id="contactus"><?php echo $this->lang->line('contactus'); ?></a>
-		</div>
+        </div>
+        
 </div>
 
 <div class="d-md-none d-block" style="margin-bottom: 20px;">

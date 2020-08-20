@@ -52,6 +52,40 @@ body {
   box-shadow: 0 6px 15px -7px #303030;
 }
 
+.nav-dropdown{
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  margin-left: 10px;
+  margin-top: 3px;
+  border-radius: 5px;
+  padding: 5px 0px;
+  box-shadow: 0 3px 10px #3030305b;
+}
+
+.service-dropdown{
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.service-dropdown:hover .nav-dropdown{
+  display: block;
+}
+
+.nav-dropdown a{
+  text-align: left;
+  border-radius: 0px !important;
+  color: black !important;
+  display: block;
+  min-width: 200px;
+  margin: 0px !important;
+}
+
+.nav-dropdown a:hover{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
 .navbar{
   padding: 0px !important;
 }
@@ -115,7 +149,7 @@ body {
   border-radius: 20px;
 }
 .page-title {
-  width: 28%;
+  width: 32%;
   margin: 0 auto;
   padding: 5px 50px 0;
   font-size: 30px;
