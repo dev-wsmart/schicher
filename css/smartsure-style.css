@@ -210,7 +210,7 @@ body {
 }
 .sitemap .sitemap-left {
   text-align: left;
-  padding-left: 28% !important;
+  padding-left: 28%;
 }
 .sitemap .sitemap-right {
   text-align: left;
@@ -246,7 +246,7 @@ body {
   .sitemap .sitemap-left,
   .sitemap .sitemap-right {
     text-align: center;
-    padding-left: 0;
+    padding-left: 0%;
   }
   .footer-left,
   .footer-right {

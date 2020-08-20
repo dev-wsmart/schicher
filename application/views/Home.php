@@ -80,11 +80,6 @@ $packages = $query->result();
             <div class="text-left">
             <?php echo mb_substr($product1s->content,0,800,'UTF-8'); ?>...
             </div>
-            <div class="col-12 col-lg-11 btn-buy">
-              <a href="<?php base_url();?>product">
-                <?php echo $this->lang->line('buyproduct');?>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -114,11 +109,6 @@ $packages = $query->result();
             <div class="text-left">
 
             <?php echo mb_substr($product2s->content,0,800,'UTF-8'); ?>...
-            </div>
-            <div class="col-12 col-lg-11 btn-buy">
-              <a href="<?php base_url();?>product" >
-                <?php echo $this->lang->line('buyproduct');?>
-              </a>
             </div>
           </div>
         </div>
