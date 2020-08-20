@@ -94,7 +94,10 @@
                     <a href="<?php echo base_url('administrator/about');?>"><i class="fa fa-users"></i>&nbsp; About Us</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/product');?>"><i class="fa fa-car"></i>&nbsp; Product</a>
+                    <a href="<?php echo base_url('administrator/service');?>"><i class="fa fa-wrench"></i>&nbsp; Service</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/partner');?>"><i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp; Partner</a>
                 </li>  
 
                 <li>
@@ -102,6 +105,9 @@
                 </li> 
                 <li>
                     <a href="<?php echo base_url('administrator/news');?>"><i class="fa fa-newspaper-o"></i>&nbsp; News</a>
+                </li> 
+                <li>
+                    <a href="<?php echo base_url('administrator/gallery');?>"><i class="fa fa-picture-o"></i>&nbsp; Gallery</a>
                 </li> 
 
                 <!-- <li>
