@@ -14,7 +14,7 @@ $news = $query->result();
                 <div class="title-circle">
                   <img src="<?php echo base_url(); ?>/assets/images/car.png" />
                 </div>
-                <div class="title-text">แกลลอรี่</div>
+                <div class="title-text"><?php echo $this->lang->line('gallery'); ?></div>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@ $news = $query->result();
                             <?php echo mb_substr($new->news_detail,0,450,'UTF-8'); ?>...
                         </div>
                         <div class="button">
-                            <a class="btn btn-more" href="<?php base_url();?>news/view/<?php echo $new->id;?>">อ่านต่อ</a>
+                            <a class="btn btn-more" href="<?php base_url();?>news/view/<?php echo $new->id;?>"><?php echo $this->lang->line('read'); ?></a>
                         </div>
                     </div>
                 </div>

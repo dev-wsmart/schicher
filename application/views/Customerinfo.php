@@ -5,32 +5,32 @@
           <img src="<?php base_url(); ?>assets/images/car.png" />
         </div>
         <div class="title-text">
-          กรุณาฝากข้อมูลติดต่อกลับ
+          <?php echo $this->lang->line('callback');?>
         </div>
       </div>
       <div class="mx-5 my-3 w-100">
         <form name ="contactinput" action="CustomerInfo/save_contactinput" method="post">
           <div class="row">
             <div class="col-lg-6 form-left">
-              <input type="text" name="brand" id="brand" placeholder="ยี่ห้อ" class="form-control form-control-sm" required>
-              <input type="text" name="model" id="model" placeholder="รุ่น" class="form-control form-control-sm" required>
-              <input type="text" name="year" id="year" placeholder="ปี" class="form-control form-control-sm" required>
-              <input type="text" name="mileage" id="mileage" placeholder="เลขไมล์" class="form-control form-control-sm" required>
+              <input type="text" name="brand" id="brand" placeholder="<?php echo $this->lang->line('brand'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="model" id="model" placeholder="<?php echo $this->lang->line('model'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="year" id="year" placeholder="<?php echo $this->lang->line('year'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="mileage" id="mileage" placeholder="<?php echo $this->lang->line('mileage'); ?>" class="form-control form-control-sm" required>
             </div>
             <div class="col-lg-6 form-right">
-              <input type="text" name="name" id="name" placeholder="ชื่อ" class="form-control form-control-sm" required>
-              <input type="text" name="lname" id="lname" placeholder="นามสกุล" class="form-control form-control-sm" required>
-              <input type="text" name="tel" id="tel" placeholder="เบอร์โทร" class="form-control form-control-sm" required>
-              <input type="text" name="email" id="email" placeholder="อีเมล์" class="form-control form-control-sm" required>
+              <input type="text" name="name" id="name" placeholder="<?php echo $this->lang->line('name'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="lname" id="lname" placeholder="<?php echo $this->lang->line('surname'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="tel" id="tel" placeholder="<?php echo $this->lang->line('tel'); ?>" class="form-control form-control-sm" required>
+              <input type="text" name="email" id="email" placeholder="<?php echo $this->lang->line('mail'); ?>" class="form-control form-control-sm" required>
 						</div>
 						<div class="col-lg-12 button" align="right">
-                <button type="submit" class="btn btn-dark" style="margin-right: -15px;margin-top:5px">ติดต่อกลับ</button>
+                <button type="submit" class="btn btn-dark" style="margin-right: -15px;margin-top:5px"><?php echo $this->lang->line('contactback'); ?></button>
               </div>
           </div>
         </form>
       </div>
       <div class="mt-2 mx-auto">
-        <div style="font-size: 22px; font-weight: 600;">Thank You</div>
+        <div style="font-size: 22px; font-weight: 600;"><?php echo $this->lang->line('thank'); ?></div>
         <div>
 					<img src="<?php base_url(); ?>assets/images/schicher-logo-white.png" width="10%" style="border-radius: 10%;box-shadow: 1px 3px 5px 1px #888888;" />
 				</div>

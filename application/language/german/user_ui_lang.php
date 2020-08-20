@@ -17,10 +17,25 @@ $lang['why'] = 'Warum Schicher?';
 $lang['know'] = 'Lernen Sie Schicher kennen';
 $lang['buyproduct'] = 'Produkt kaufen';
 $lang['more'] = 'Mehr';
+$lang['read'] = "Weiterlesen";
+
+$lang['qualityservice'] = "Qualitätsdienstleistung";
+$lang['callback'] = "Kontaktinformationen hinterlassenn";
+$lang['contactback'] = "Kontakt zurück";
+$lang['productdetail'] = "Produktbeschreibung";
 
 $lang['name'] = "Name";
+$lang['surname'] = "Nachname";
+$lang['tel'] = "Telefon";
 $lang['mail'] = "E-Mail-Addresse";
 $lang['subject'] = "Gegenstand";
 $lang['message'] = "Botschaft";
 $lang['send'] = "senden";
+
+$lang['brand'] = "Marke";
+$lang['model'] = "Modell-";
+$lang['year'] = "Jahr";
+$lang['mileage'] = "Kilometerstand";
+
+$lang['thank'] = "Danke";
 ?>

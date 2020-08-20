@@ -17,10 +17,25 @@ $lang['why'] = 'ทำไมต้อง Schicher';
 $lang['know'] = 'รู้จัก Schicher';
 $lang['buyproduct'] = 'ซื้อผลิตภัณฑ์';
 $lang['more'] = 'เพิ่มเติม';
+$lang['read'] = "อ่านต่อ";
+
+$lang['qualityservice'] = "บริการคุณภาพ";
+$lang['callback'] = "ฝากข้อมูลติดต่อกลับ";
+$lang['contactback'] = "ติดต่อกลับ";
+$lang['productdetail'] = "รายละเอียดผลิตภัณฑ์";
 
 $lang['name'] = "ชื่อ";
+$lang['surname'] = "นามสกุล";
+$lang['tel'] = "เบอร์โทร";
 $lang['mail'] = "อีเมล";
 $lang['subject'] = "หัวข้อ";
 $lang['message'] = "ข้อความ";
 $lang['send'] = "ส่ง";
+
+$lang['brand'] = "ยี่ห้อ";
+$lang['model'] = "รุ่น";
+$lang['year'] = "ปี";
+$lang['mileage'] = "เลขไมล์";
+
+$lang['thank'] = "ขอบคุณ";
 ?>
