@@ -63,10 +63,7 @@
     var str = $(this).val();
     modelWording = str;
   });
-  $("#cc").on("keyup", function(){
-    var str = $(this).val();
-    ccWording = str;
-  });
+
 
   $("#brand").autocomplete({
     source: function(request, response){
@@ -106,24 +103,6 @@
     }
   });
 
-  $("#cc").autocomplete({
-    source: function(request, response){
-      $.ajax({
-      type: "GET",
-      url:"suggest/ccs/"+ccWording,
-      dataType: 'json',
-      success:function(data)
-      {
-        response($.map(data, function (el){
-          return {
-            label: el.cc,
-            value: el.cc
-          }
-        }));
-      }
-      });
-    }
-  });
 </script>
 
 <style>
