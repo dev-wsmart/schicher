@@ -1,31 +1,10 @@
 <?php
-if (isset($_GET['brand']) && isset($_GET['model'])){
 
-  $brand = $_GET['brand'];
-  $model = $_GET['model'];
-  $currentYear = date('Y');
-  $year = intval($_GET['year']);
-  $remainYear = $currentYear - $year;
-  $mileage = intval($_GET['mileage']);
-
-  $this->db->select("distinct('car_package.package'), product.package, product.details, product.image, product.id");
-  $this->db->from('car_package');
-  $this->db->join('product', 'car_package.package_name = product.package');
-  $this->db->like("car_package.car_brand", $brand, 'after');
-  $this->db->like('car_package.car_model', $model, 'after');
-  $this->db->where('car_package.year_limit >', $remainYear);
-  $this->db->where('car_package.km_limit >=', $mileage);
-  $this->db->where("product.status", "1");
-  $query_package = $this->db->get();
-  $products = $query_package->result();
-
-}else{
   $this->db->select("*");
-  $this->db->from("product");
-  $this->db->where("product.status", "1");
+  $this->db->from("service");
   $query = $this->db->get();
-  $products = $query->result();
-}
+  $services = $query->result();
+
 ?>
 <?php include('Banner.php'); ?>
 <div class="product">
@@ -39,32 +18,25 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
     </div>
       <div class="row p-1">
         <div class="mx-5 my-4">
-            <?php foreach($products as $product): ?>
+            <?php foreach($services as $service): ?>
                 <div class="row frame mb-3">
                     <div class="col-lg-4">
-                        <div class="package-title"><?php echo $product->package ?></div>
+                        <div class="package-title"><?php echo $service->topic ?></div>
                         <div class="images">
-                            <img src="<?php echo base_url();?>/assets/uploads/Product/<?php echo $product->image?>" />
+                            <img src="<?php echo base_url();?>/assets/uploads/Product/<?php echo $service->images?>" />
                         </div>
                     </div>
               
                     <div class="col-lg-8">
                         <div class="details-title"><?php echo $this->lang->line('productdetail');?></div>
                         <div class="details">
-                          <?php echo mb_substr($product->details,0,600,'UTF-8'); ?>...
+                          <?php echo mb_substr($service->detail,0,600,'UTF-8'); ?>...
                         </div>
-                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
+                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $service->id_service ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
                     </div>
                 </div>
             <?php endforeach; ?>
-            <?php if (isset($_GET['brand']) && isset($_GET['model'])){
-                if ($query_package->num_rows() > 0){
-                  echo "พบ ".$query_package->num_rows()." แพคเกจของ<br>";
-                  echo $brand . " ". $model. " ". $year ;
-                }else{
-                  echo "ไม่พบผลการค้นหา";
-                }
-              }?>
+
         </div>
     </div>
 </div>

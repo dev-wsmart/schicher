@@ -102,6 +102,9 @@
                 </li> 
                 <li>
                     <a href="<?php echo base_url('administrator/news');?>"><i class="fa fa-newspaper-o"></i>&nbsp; News</a>
+				</li> 
+				<li>
+                    <a href="<?php echo base_url('administrator/service');?>"><i class="fa fa-newspaper-o"></i>&nbsp; service</a>
                 </li> 
 
                 <!-- <li>
