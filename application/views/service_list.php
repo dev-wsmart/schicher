@@ -1,11 +1,18 @@
 <?php
 
   $this->db->select("*");
-	$this->db->from("service");
-  $this->db->where("service.status", "1");
+  $this->db->from("service_list");
+  $this->db->join('service', 'service_list.id_service = service.id_service');
+  $this->db->where("service_list.status", "1");
   $query = $this->db->get();
-	$services = $query->result();
+  $service_list = $query->result();
 	
+  $this->db->select("*");
+  $this->db->from("service");
+  $this->db->where("service.status", "1");
+  $this->db->where("service.id_service", "1");
+  $query = $this->db->get();
+  $services = $query->result();
 
 ?>
 <?php include('Banner.php'); ?>
@@ -14,41 +21,48 @@
         <div class="title">
             <div class="title-circle">
                 <img src="<?php echo base_url(); ?>/assets/images/car.png" />
-						</div>
-            <div class="title-text"><?php echo $this->lang->line('qualityservice'); ?></div>
+			</div>
+	<?php foreach($services as $ser):
+		if($this->session->userdata("language")=='english'){$topicH = $ser->topic_en;}
+		elseif($this->session->userdata("language")=='german'){$topicH = $ser->topic_de;}
+		else{$topicH = $ser->topic_th;}
+		?>
+			<div class="title-text"><?php echo $ser->id_service.'. '.$topicH; ?></div>
+	<?php endforeach; ?>
         </div>
     </div>
       <div class="row p-1">
         <div class="mx-5 my-4">
 
-				<?php foreach($services as $service): 
+		<?php foreach($service_list as $service): 
 							
-							if($this->session->userdata("language")=='english')
-							{
-								$topic = $service->topic_en;
-								$detail = $service->detail_en;
-							}
-							elseif($this->session->userdata("language")=='german')
-							{
-								$topic = $service->topic_de;
-								$detail = $service->detail_de;
-							}
-							else
-							{
-								$topic = $service->topic_th;
-								$detail = $service->detail_th;
-							}
-						?>
+			if($this->session->userdata("language")=='english')
+			{
+				$list = $service->list_en;
+				$detail = $service->detail_en;
+			}
+			elseif($this->session->userdata("language")=='german')
+			{
+				$list = $service->list_de;
+				$detail = $service->detail_de;
+			}
+			else
+			{
+				$list = $service->list_th;
+				$detail = $service->detail_th;
+			}
+		?>
+
                 <div class="row frame mb-3">
                     <div class="col-lg-4">
-                        <div class="package-title"><?php echo $topic; ?></div>
+                        <div class="package-title"><?php echo $list; ?></div>
                         <div class="images">
-                            <img src="<?php echo base_url();?>/assets/uploads/Service/<?php echo $service->images?>" />
+                            <img src="<?php echo base_url();?>/assets/uploads/Service_list/<?php echo $service->images_list?>" />
                         </div>
                     </div>
               
                     <div class="col-lg-8">
-                        <div class="details-title"><?php echo $topic;?></div>
+                        <div class="details-title"><?php echo $list;?></div>
                         <div class="details">
                           <?php echo mb_substr($detail,0,600,'UTF-8'); ?>
                         </div>
@@ -64,10 +78,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#service').addClass("active");
+        $('#service_list').addClass("active");
 
         $('.navbar-nav a').removeClass("active");
-        $('a.service').addClass("active");
+        $('a.service_list').addClass("active");
     });
 </script>
 

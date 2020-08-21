@@ -46,7 +46,6 @@ class Administrator extends CI_Controller {
 		$crud = new grocery_CRUD();
 		$crud->set_theme("bootstrap");
 		$crud->set_table('home')
-	
 		->order_by('id','content','date')
 		->set_subject('home Content')
 		->display_as('content','Content')
@@ -261,6 +260,50 @@ class Administrator extends CI_Controller {
 			$output = $crud->render();
 			$this->_example_output($output);
 	}
+
+	function service(){
+		$crud = new grocery_CRUD();
+		$crud->set_theme("bootstrap");
+		$crud->set_table('service')
+	
+		->order_by('id_service','topic_th','topic_en','topic_de','detail_th','detail_en','detail_de','images')
+		->set_subject('service Content')
+		->display_as('topic_th','Topic Thai')
+		->display_as('topic_en','Topic Eng')
+		->display_as('topic_de','Topic Ger')
+		->display_as('detail_th','Detail Thai')
+		->display_as('detail_en','Detail Eng')
+		->display_as('detail_de','Detail Ger')
+		->display_as('images','Images');
+	
+	
+			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+			$crud->set_field_upload('images','assets/uploads/Service');
+			$output = $crud->render();
+			$this->_example_output($output);
+	}
+
+	function service_list(){
+		$crud = new grocery_CRUD();
+		$crud->set_theme("bootstrap");
+		$crud->set_table('service_list')
+	
+		->order_by('id_service_list','desc')
+		->set_subject('service list Content')
+		->display_as('list_th','List Thai')
+		->display_as('list_en','List Eng')
+		->display_as('list_de','List Ger')
+		->display_as('images_list','Images');
+	
+	
+			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+			$crud->field_type('id_service','dropdown',array('1' => 'Vehicle Analysis ', '2' => 'Claims &Appraisal','3' => 'Vehicle Management Services ', '4' => 'Dealership Certification & Auditing ', '5' => 'Dealership Training & Qualification'));
+			$crud->set_field_upload('images_list','assets/uploads/Service_list');
+			$output = $crud->render();
+			$this->_example_output($output);
+	}
+
+
 
 
 
