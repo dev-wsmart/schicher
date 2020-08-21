@@ -348,6 +348,8 @@ class Administrator extends CI_Controller {
 		$crud = new grocery_CRUD();
 		$crud->set_theme("bootstrap");
 		$crud->set_table("customer_contact")
+
+		->order_by('id_cus','desc')
 		->display_as('lname', 'Lastname')
 		->display_as('tel', 'Telephone');
 
