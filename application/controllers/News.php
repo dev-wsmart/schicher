@@ -11,7 +11,7 @@ class News extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'News | Schicher',
+			   'title' => 'News',
 			   'content' => 'News'
 			   
           );
@@ -20,12 +20,11 @@ class News extends CI_Controller {
 		$this->load->view('template',$template);
 	
 	}
-	
 	public function view($id=null){
 
 		$contents['cart_session'] = $this->session->userdata('cart_session');
-		$template=array(
-		 'title'   => 'News Show | Smart Sure',
+		$template = array(
+		 'title'   => 'News Show',
 		 'content' => 'news_show',
 		 'id' => $id
 		 );

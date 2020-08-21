@@ -20,9 +20,10 @@
             </a>
 		</div>
         <div class="bd-highlight lang-link">
-            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.TH ?>" class="<?php if($this->session->userdata("language") == TH) { echo "active"; } ?>">TH</a> |
-            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.EN ?>" class="<?php if($this->session->userdata("language") == EN) { echo "active"; } ?>">EN</a> |
-            <a href="<?php echo base_url().'/language?url='.current_url().'&lang='.DE ?>" class="<?php if($this->session->userdata("language") == DE) { echo "active"; } ?>">DE</a>
+			<?php $currenturl = $_SERVER['QUERY_STRING'] ? current_url(). '?'.$_SERVER['QUERY_STRING'] : current_url(); ?>
+            <a href="<?php echo base_url().'/language?url='.$currenturl.'&lang='.TH ?>" class="<?php if($this->session->userdata("language") == TH) { echo "active"; } ?>">TH</a> |
+            <a href="<?php echo base_url().'/language?url='.$currenturl.'&lang='.EN ?>" class="<?php if($this->session->userdata("language") == EN) { echo "active"; } ?>">EN</a> |
+            <a href="<?php echo base_url().'/language?url='.$currenturl.'&lang='.DE ?>" class="<?php if($this->session->userdata("language") == DE) { echo "active"; } ?>">DE</a>
         </div>
     </div>
 		<div id="nav">
