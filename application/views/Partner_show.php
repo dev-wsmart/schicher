@@ -1,24 +1,24 @@
 <?php
 $this->db->select("*");
-$this->db->from("gallery");
-$this->db->where("gallery.id", $id);
+$this->db->from("partner");
+$this->db->where("partner.id_partner", $id);
 $query = $this->db->get();
-$gallery = $query->row();
+$partner = $query->row();
 ?>
 <div class="container">
     <div class="row">
         <div class="col-12 p-4">
-            <img class="top-img" src="<?php echo base_url(); ?>/assets/uploads/Gallery/<?php echo $gallery->images_gall ?>">
+            <img class="top-img" src="<?php echo base_url(); ?>/assets/uploads/Partner/<?php echo $partner->images_part ?>">
 		</div>
 		
 		<?php
-		if($this->session->userdata("language")=='english'){$detail = $gallery->detail_gall_en;$topic='Topic';}
-		elseif($this->session->userdata("language")=='german'){$detail = $gallery->detail_gall_de;$topic='Thema';}
-		else{$detail = $gallery->detail_gall_th;$topic='หัวข้อ';}
+		if($this->session->userdata("language")=='english'){$detail = $partner->detail_part_en;$topic='Topic';}
+		elseif($this->session->userdata("language")=='german'){$detail = $partner->detail_part_de;$topic='Thema';}
+		else{$detail = $partner->detail_part_th;$topic='หัวข้อ';}
 		?>
 
         <div class="col-12">
-            <div class="title"><?php echo $topic; ?></div>
+            <div class="title"><?php echo $topic;  ?></div>
             <div class="content col-12">
                 <div>
                     <?php echo $detail; ?>
@@ -31,10 +31,10 @@ $gallery = $query->row();
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#gallery').addClass("active");
+        $('#partner').addClass("active");
 
         $('.navbar-nav a').removeClass("active");
-        $('a.gallery').addClass("active");
+        $('a.partner').addClass("active");
     });
 </script>
 

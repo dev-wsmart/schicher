@@ -11,13 +11,17 @@ $news = $query->row();
             <img class="top-img" src="<?php echo base_url(); ?>assets/uploads/News/<?php echo $news->news_image ?>">
         </div>
 
+		<?php
+		if($this->session->userdata("language")=='english'){$detail = $news->news_detail_en;$topic='Topic';}
+		elseif($this->session->userdata("language")=='german'){$detail = $news->news_detail_de;$topic='Thema';}
+		else{$detail = $news->news_detail_th;$topic='หัวข้อ';}
+		?>
+
         <div class="col-12">
-            <div class="title">
-                หัวข้อ
-            </div>
+            <div class="title"><?php echo $topic;  ?></div>
             <div class="content col-12">
                 <div>
-                    <?php echo $news->news_detail ?>
+                    <?php echo $detail ?>
                 </div>
             </div>
         </div>

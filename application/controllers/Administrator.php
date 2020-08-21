@@ -124,10 +124,15 @@ class Administrator extends CI_Controller {
 		$crud->set_theme("bootstrap");
 		$crud->set_table('promotion')
 		
-		->order_by('id','content','date')
+		->order_by('id','desc')
 		->set_subject('promotion Content')
-		->display_as('content','Content')
-		->display_as('img','Images')
+		->display_as('title_th','Topic Thai')
+		->display_as('title_en','Topic Eng')
+		->display_as('title_de','Topic Ger')
+		->display_as('details_th','Detail Thai')
+		->display_as('details_en','Detail Eng')
+		->display_as('details_de','Detail Ger')
+		->display_as('image','Images')
 		->display_as('date','Day ');
 	
 		
@@ -144,7 +149,9 @@ class Administrator extends CI_Controller {
 	
 		->order_by('id','content','date')
 		->set_subject('news Content')
-		->display_as('news_detail','Detail')
+		->display_as('news_detail_th','Detail Thai')
+		->display_as('news_detail_en','Detail Eng')
+		->display_as('news_detail_de','Detail Ger')
 		->display_as('news_image','Images')
 		->display_as('date','Day');
 	
@@ -312,6 +319,27 @@ class Administrator extends CI_Controller {
 	
 			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
 			$crud->set_field_upload('images_gall','assets/uploads/Gallery');
+			$output = $crud->render();
+			$this->_example_output($output);
+	}
+	function partner(){
+		$crud = new grocery_CRUD();
+		$crud->set_theme("bootstrap");
+		$crud->set_table('partner')
+	
+		->order_by('id_partner','desc')
+		->set_subject('partner Content')
+		->display_as('name_part_th','Topic Thai')
+		->display_as('name_part_en','Topic Eng')
+		->display_as('name_part_de','Topic Ger')
+		->display_as('detail_part_th','Detail Thai')
+		->display_as('detail_part_en','Detail Eng')
+		->display_as('detail_part_de','Detail Ger')
+		->display_as('images_part','Images');
+	
+	
+			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+			$crud->set_field_upload('images_part','assets/uploads/Partner');
 			$output = $crud->render();
 			$this->_example_output($output);
 	}
