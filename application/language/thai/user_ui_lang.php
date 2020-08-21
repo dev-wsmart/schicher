@@ -20,7 +20,7 @@ $lang['more'] = 'เพิ่มเติม';
 $lang['read'] = "อ่านต่อ";
 
 $lang['qualityservice'] = "บริการคุณภาพ";
-$lang['callback'] = "ฝากข้อมูลติดต่อกลับ";
+$lang['callback'] = "กรุณาฝากข้อมูลติดต่อกลับ";
 $lang['contactback'] = "ติดต่อกลับ";
 $lang['productdetail'] = "รายละเอียดผลิตภัณฑ์";
 
