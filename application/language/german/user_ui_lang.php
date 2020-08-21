@@ -38,4 +38,10 @@ $lang['year'] = "Jahr";
 $lang['mileage'] = "Kilometerstand";
 
 $lang['thank'] = "Danke";
+
+$lang['register'] = "Registrieren";
+$lang['username'] = "Nutzername";
+$lang['password'] = "Passwort";
+$lang['confirmpassword'] = "Bestätige das Passwort";
+$lang['completeregister'] = "Registrieren Sie sich vollständig";
 ?>

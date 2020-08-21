@@ -1,11 +1,11 @@
 <!-- <?php echo "<meta http-equiv=\"refresh\" content=\"1;url='".base_url()."'\">"; ?> -->
 <div class="success pb-5">
     <div class="py-4">
-        <div class="page-title">SMART SURE ID</div>
+        <div class="page-title">Schicher ID</div>
     </div>
     <div class="mx-5 content">
         <div class="text">
-            ข้อมูลของคุณถูกส่งให้ SMART SURE เรียบร้อยแล้ว
+            ข้อมูลของคุณถูกส่งให้ Schicher เรียบร้อยแล้ว
             <br />
             เจ้าหน้าที่จะติดต่อกลับภายใน 24 ชั่วโมงค่ะ
             <br/>

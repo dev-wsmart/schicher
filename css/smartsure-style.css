@@ -143,6 +143,16 @@ body {
   color: #000000;
 }
 
+.register-link{
+  padding-right: 10px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.register-link a{
+  color: #ffffff;
+}
+
 /* content */
 #content {
   background-color: #ffffff;
