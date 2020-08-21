@@ -1,14 +1,14 @@
 <?php
 $this->db->select("*");
 $this->db->from("gallery");
-$this->db->where("gallery.id_gallery", $id);
+$this->db->where("gallery.id", $id);
 $query = $this->db->get();
 $gallery = $query->row();
 ?>
 <div class="container">
     <div class="row">
         <div class="col-12 p-4">
-            <img class="top-img" src="<?php echo base_url(); ?>assets/uploads/Gallery/<?php echo $gallery->images_gall ?>">
+            <img class="top-img" src="<?php echo base_url(); ?>/assets/uploads/Gallery/<?php echo $gallery->images_gall ?>">
         </div>
 
         <div class="col-12">

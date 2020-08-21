@@ -11,7 +11,7 @@ class Partner extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Partner | Schicher',
+			   'title' => 'Partner ',
 			   'content' => 'Partner'
 			   
           );

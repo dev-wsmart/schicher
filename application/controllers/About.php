@@ -12,7 +12,7 @@ class About extends CI_Controller {
 		$this->lang->load("user_ui","english");
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'About | Schicher',
+			   'title' => 'About ',
 			   'content' => 'About',
 			   
           );

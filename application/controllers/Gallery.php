@@ -24,15 +24,16 @@ class Gallery extends CI_Controller {
 
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template=array(
-		 'title'   => 'Gellery show',
-		 'content' => 'Gellery_show',
-		 'id' => $id
+			'title'   => 'Gallery show',
+			'content' => 'Gallery_show',
+			'id' => $id
 		 );
 	   
-		echo $contents['id'] = $id;
+		$contents['id'] = $id;
+		// $template['content'] = $this->load->view('Gallery_show',$contents,true);
 		$this->load->view('template',$template);
 
 		}
 	
 }
-?>
+
