@@ -9,15 +9,19 @@ $promotions = $query->row();
     <div class="row">
         <div class="col-12 p-4">
             <img class="top-img" src="<?php echo base_url(); ?>assets/uploads/Promotion/<?php echo $promotions->image ?>">
-        </div>
+		</div>
+		
+		<?php
+		if($this->session->userdata("language")=='english'){$detail = $promotions->details_en;$topic='Topic';}
+		elseif($this->session->userdata("language")=='german'){$detail = $promotions->details_de;$topic='Thema';}
+		else{$detail = $promotions->details_th;$topic='หัวข้อ';}
+		?>
 
         <div class="col-12">
-            <div class="title">
-                หัวข้อ
-            </div>
+            <div class="title"><?php echo $topic;  ?></div>
             <div class="content col-12">
                 <div>
-                    <?php echo $promotions->details ?>
+                    <?php echo $detail ?>
                 </div>
             </div>
         </div>

@@ -1,71 +1,61 @@
 <?php
-if (isset($_GET['brand']) && isset($_GET['model'])){
-
-  $brand = $_GET['brand'];
-  $model = $_GET['model'];
-  $currentYear = date('Y');
-  $year = intval($_GET['year']);
-  $remainYear = $currentYear - $year;
-  $mileage = intval($_GET['mileage']);
-
-  $this->db->select("distinct('car_package.package'), product.package, product.details, product.image, product.id");
-  $this->db->from('car_package');
-  $this->db->join('product', 'car_package.package_name = product.package');
-  $this->db->like("car_package.car_brand", $brand, 'after');
-  $this->db->like('car_package.car_model', $model, 'after');
-  $this->db->where('car_package.year_limit >', $remainYear);
-  $this->db->where('car_package.km_limit >=', $mileage);
-  $this->db->where("product.status", "1");
-  $query_package = $this->db->get();
-  $products = $query_package->result();
-
-}else{
-  $this->db->select("*");
-  $this->db->from("product");
-  $this->db->where("product.status", "1");
-  $query = $this->db->get();
-  $products = $query->result();
-}
+$this->db->select("*");
+$this->db->from("partner");
+$this->db->where("partner.status", "1");
+$query = $this->db->get();
+$partners = $query->result();
 ?>
+
 <?php include('Banner.php'); ?>
-<div class="product">
-    <div class="row p-3">
-        <div class="title">
-            <div class="title-circle">
-                <img src="<?php echo base_url(); ?>/assets/images/car.png" />
+<div class="promotion">
+    <div class="row">
+        <div class="p-3">
+            <div class="title">
+                <div class="title-circle">
+                  <img src="<?php echo base_url(); ?>/assets/images/car.png" />
+                </div>
+                <div class="title-text"><?php echo $this->lang->line('partner'); ?></div>
             </div>
-            <div class="title-text"><?php echo $this->lang->line('partner'); ?></div>
         </div>
     </div>
-      <div class="row p-1">
-        <div class="mx-5 my-4">
-            <?php foreach($products as $product): ?>
-                <div class="row frame mb-3">
+    <div class="row">
+		<?php foreach($partners as $partner):  
+
+			if($this->session->userdata("language")=='english')
+			{
+				$topic = $partner->name_part_en;
+				$detail = $partner->detail_part_en;
+			}
+			elseif($this->session->userdata("language")=='german')
+			{
+				$topic = $partner->name_part_de;
+				$detail = $partner->detail_part_de;
+			}
+			else
+			{
+				$topic = $partner->name_part_th;
+				$detail = $partner->detail_part_th;
+			}
+		?>
+        <div class="mx-5 mt-2">
+            <div cols="12" class="promotion-title"><?php echo $topic;?></div>
+            <div class="frame">
+                <div class="row">
                     <div class="col-lg-4">
-                        <div class="package-title"><?php echo $product->package ?></div>
-                        <div class="images">
-                            <img src="<?php echo base_url();?>/assets/uploads/Product/<?php echo $product->image?>" />
-                        </div>
+                        <img src="<?php echo base_url(); ?>/assets/uploads/Partner/<?php echo $partner->images_part ?>" width="100%" />
                     </div>
-              
                     <div class="col-lg-8">
-                        <div class="details-title"><?php echo $this->lang->line('productdetail'); ?></div>
                         <div class="details">
-                          <?php echo mb_substr($product->details,0,600,'UTF-8'); ?>...
+                            <?php echo mb_substr($detail,0,500,'UTF-8'); ?>...
                         </div>
-                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $product->id ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
+                        <div class="button">
+                            <a class="btn btn-more" href="<?php base_url();?>Partner/view/<?php echo $partner->id_partner;?>"><?php echo $this->lang->line('read'); ?></a>
+                        </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
-            <?php if (isset($_GET['brand']) && isset($_GET['model'])){
-                if ($query_package->num_rows() > 0){
-                  echo "พบ ".$query_package->num_rows()." แพคเกจของ<br>";
-                  echo $brand . " ". $model. " ". $year ;
-                }else{
-                  echo "ไม่พบผลการค้นหา";
-                }
-              }?>
+            </div>
         </div>
+        <?php endforeach;?>
     </div>
 </div>
 
@@ -73,38 +63,30 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
     $(document).ready(function() {
         $('#nav a').removeClass("active");
         $('#partner').addClass("active");
-
+        
         $('.navbar-nav a').removeClass("active");
         $('a.partner').addClass("active");
     });
 </script>
 
-<style>
-.content-row{
-  display: block;
-}
 
+<style>
 .frame {
+  margin-bottom: 25px;
   padding: 10px;
-  border: 9px solid #012C49;
+  background-color: #012C49;
+  color: #ffffff;
+  box-shadow: 0 35px 10px -30px #6e6e6e;
 }
-.images{
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.images img{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.package-title {
-  font-size: 22px;
-  font-weight: bold;
+.promotion-title {
+  text-align: left;
+  padding: 4px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #000000;
 }
 .details-title {
-  background-color: #000000;
-  color: #ffffff;
   padding: 5px;
   margin-bottom: 10px;
   font-size: 19px;
@@ -114,6 +96,9 @@ if (isset($_GET['brand']) && isset($_GET['model'])){
   text-align: left;
 }
 .button {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
   text-align: right;
 }
 .btn-more {

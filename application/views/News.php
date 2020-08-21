@@ -19,9 +19,16 @@ $news = $query->result();
         </div>
     </div>
     <div class="row">
-        <?php foreach($news as $new):  ?>
+		<?php foreach($news as $new):  ?>
+			
+		<?php
+		if($this->session->userdata("language")=='english'){$detail = $new->news_detail_en;$topic='News headlines and events';}
+		elseif($this->session->userdata("language")=='german'){$detail = $new->news_detail_de;$topic='Schlagzeilen und Ereignisse';}
+		else{$detail = $new->news_detail_th;$topic='หัวข้อข่าวสารและกิจกรรม';}
+		?>
+
         <div class="mx-5 mt-2">
-            <div cols="12" class="promotion-title">หัวข้อข่าวสารและกิจกรรม</div>
+            <div cols="12" class="promotion-title"><?php echo $topic; ?></div>
             <div class="frame">
                 <div class="row">
                     <div class="col-lg-4">
@@ -29,7 +36,7 @@ $news = $query->result();
                     </div>
                     <div class="col-lg-8">
                         <div class="details">
-                            <?php echo mb_substr($new->news_detail,0,450,'UTF-8'); ?>...
+                            <?php echo mb_substr($detail,0,450,'UTF-8'); ?>...
                         </div>
                         <div class="button">
                             <a class="btn btn-more" href="<?php base_url();?>news/view/<?php echo $new->id;?>"><?php echo $this->lang->line('read'); ?></a>

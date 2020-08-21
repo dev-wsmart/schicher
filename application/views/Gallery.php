@@ -9,8 +9,8 @@ $gallerys = $query->result();
 <?php include('Banner.php'); ?>
 <div class="promotion">
     <div class="row">
-        <div class="p-3 pb-4">
-            <div class="title mb-3">
+        <div class="p-3">
+            <div class="title">
                 <div class="title-circle">
                   <img src="<?php echo base_url(); ?>/assets/images/car.png" />
                 </div>
@@ -19,9 +19,26 @@ $gallerys = $query->result();
         </div>
     </div>
     <div class="row">
-        <?php foreach($gallerys as $gallery):  ?>
+		<?php foreach($gallerys as $gallery):  
+
+			if($this->session->userdata("language")=='english')
+			{
+				$topic = $gallery->topic_gall_en;
+				$detail = $gallery->detail_gall_en;
+			}
+			elseif($this->session->userdata("language")=='german')
+			{
+				$topic = $gallery->topic_gall_de;
+				$detail = $gallery->detail_gall_de;
+			}
+			else
+			{
+				$topic = $gallery->topic_gall_th;
+				$detail = $gallery->detail_gall_th;
+			}
+		?>
         <div class="mx-5 mt-2">
-            <div cols="12" class="promotion-title"><?php echo $gallery->topic_gall_th;?></div>
+            <div cols="12" class="promotion-title"><?php echo $topic;?></div>
             <div class="frame">
                 <div class="row">
                     <div class="col-lg-4">
@@ -29,7 +46,7 @@ $gallerys = $query->result();
                     </div>
                     <div class="col-lg-8">
                         <div class="details">
-                            <?php echo mb_substr($gallery->detail_gall_th,0,500,'UTF-8'); ?>...
+                            <?php echo mb_substr($detail,0,500,'UTF-8'); ?>...
                         </div>
                         <div class="button">
                             <a class="btn btn-more" href="<?php base_url();?>Gallery/view/<?php echo $gallery->id;?>"><?php echo $this->lang->line('read'); ?></a>

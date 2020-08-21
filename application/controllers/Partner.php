@@ -20,6 +20,20 @@ class Partner extends CI_Controller {
 		$this->load->view('template',$template);
 	
 	}
+	public function view($id=null){
+
+		$contents['cart_session'] = $this->session->userdata('cart_session');
+		$template=array(
+			'title'   => 'Partner show',
+			'content' => 'Partner_show',
+			'id' => $id
+		 );
+	   
+		$contents['id'] = $id;
+		// $template['content'] = $this->load->view('Partner_show',$contents,true);
+		$this->load->view('template',$template);
+
+		}
 	
 }
 ?>

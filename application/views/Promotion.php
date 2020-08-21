@@ -21,9 +21,28 @@ $promotions = $query->result();
         </div>
     </div>
     <div class="row">
-        <?php foreach($promotions as $promotion):  ?>
+		<?php foreach($promotions as $promotion): 
+		
+			if($this->session->userdata("language")=='english')
+			{
+				$topic = $promotion->title_en;
+				$detail = $promotion->details_en;
+			}
+			elseif($this->session->userdata("language")=='german')
+			{
+				$topic = $promotion->title_de;
+				$detail = $promotion->details_de;
+			}
+			else
+			{
+				$topic = $promotion->title_th;
+				$detail = $promotion->details_th;
+			}
+		?>
+
+
         <div class="mx-5 mt-2">
-            <div cols="12" class="promotion-title"><?php echo $promotion->title ?></div>
+            <div cols="12" class="promotion-title"><?php echo $topic ?></div>
             <div class="frame">
                 <div class="row">
                     <div class="col-lg-4">
@@ -31,7 +50,7 @@ $promotions = $query->result();
                     </div>
                     <div class="col-lg-8">
                         <div class="details">
-                            <?php echo mb_substr($promotion->details,0,450,'UTF-8'); ?>...
+                            <?php echo mb_substr($detail,0,450,'UTF-8'); ?>...
                         </div>
                         <div class="button">
                             <a class="btn btn-more" href="<?php base_url();?>promotion/view/<?php echo $promotion->id;?>"><?php echo $this->lang->line('read'); ?></a>
