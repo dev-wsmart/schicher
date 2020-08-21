@@ -115,6 +115,9 @@
                 <li>
                     <a href="<?php echo base_url('administrator/gallery');?>"><i class="fa fa-picture-o"></i>&nbsp; Gallery</a>
                 </li> 
+                <li>
+                    <a href="<?php echo base_url('administrator/register');?>"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Registered People</a>
+                </li>
 
                 <!-- <li>
                     <a href="<?php echo base_url('administrator/rest_server');?>"><i class=" glyphicon glyphicon-transfer "></i> Rest_server</a>
