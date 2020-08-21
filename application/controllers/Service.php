@@ -11,7 +11,7 @@ class Service extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Service | Schicher',
+			   'title' => 'Service ',
 			   'content' => 'Service'
 			   
           );

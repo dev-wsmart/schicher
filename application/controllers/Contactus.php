@@ -11,7 +11,7 @@ class Contactus extends CI_Controller {
 	public function index(){
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
-			   'title' => 'Contact Us | Schicher',
+			   'title' => 'Contact Us ',
 			   'content' => 'Contactus',
 			   
           );
