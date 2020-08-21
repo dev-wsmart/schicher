@@ -1,9 +1,9 @@
 <?php
 $this->db->select("*");
-$this->db->from("news");
-$this->db->where("news.status", "1");
+$this->db->from("gallery");
+$this->db->where("gallery.status", "1");
 $query = $this->db->get();
-$news = $query->result();
+$gallerys = $query->result();
 ?>
 
 <?php include('Banner.php'); ?>
@@ -19,20 +19,20 @@ $news = $query->result();
         </div>
     </div>
     <div class="row">
-        <?php foreach($news as $new):  ?>
+        <?php foreach($gallerys as $gallery):  ?>
         <div class="mx-5 mt-2">
-            <div cols="12" class="promotion-title">หัวข้อข่าวสารและกิจกรรม</div>
+            <div cols="12" class="promotion-title"><?php echo $gallery->topic_gall_th;?></div>
             <div class="frame">
                 <div class="row">
                     <div class="col-lg-4">
-                        <img src="<?php echo base_url(); ?>/assets/uploads/News/<?php echo $new->news_image ?>" width="100%" />
+                        <img src="<?php echo base_url(); ?>/assets/uploads/Gallery/<?php echo $gallery->images_gall ?>" width="100%" />
                     </div>
                     <div class="col-lg-8">
                         <div class="details">
-                            <?php echo mb_substr($new->news_detail,0,450,'UTF-8'); ?>...
+                            <?php echo mb_substr($gallery->detail_gall_th,0,500,'UTF-8'); ?>...
                         </div>
                         <div class="button">
-                            <a class="btn btn-more" href="<?php base_url();?>news/view/<?php echo $new->id;?>"><?php echo $this->lang->line('read'); ?></a>
+                            <a class="btn btn-more" href="<?php base_url();?>Gallery/view/<?php echo $gallery->id;?>"><?php echo $this->lang->line('read'); ?></a>
                         </div>
                     </div>
                 </div>

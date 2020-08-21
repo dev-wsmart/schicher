@@ -3,8 +3,12 @@
 class Language extends CI_Controller {
 
     function index(){
-        $previousUrl = $_GET["url"];
-        $language = $_GET["lang"];
+
+
+			$previousUrl = $_GET["url"];
+			$language = $_GET["lang"];
+
+		// $this->session->set_userdata("service", $service);
 
         $this->session->set_userdata("language", $language);
 

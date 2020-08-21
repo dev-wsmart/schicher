@@ -302,7 +302,27 @@ class Administrator extends CI_Controller {
 			$output = $crud->render();
 			$this->_example_output($output);
 	}
-
+	function gallery(){
+		$crud = new grocery_CRUD();
+		$crud->set_theme("bootstrap");
+		$crud->set_table('gallery')
+	
+		->order_by('id','desc')
+		->set_subject('gallery Content')
+		->display_as('topic_gall_th','Topic Thai')
+		->display_as('topic_gall_en','Topic Eng')
+		->display_as('topic_gall_de','Topic Ger')
+		->display_as('detail_gall_th','Detail Thai')
+		->display_as('detail_gall_en','Detail Eng')
+		->display_as('detail_gall_de','Detail Ger')
+		->display_as('images_gall','Images');
+	
+	
+			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
+			$crud->set_field_upload('images_gall','assets/uploads/Gallery');
+			$output = $crud->render();
+			$this->_example_output($output);
+	}
 
 
 

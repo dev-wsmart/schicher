@@ -52,7 +52,8 @@
                         <div class="details">
                           <?php echo mb_substr($detail,0,600,'UTF-8'); ?>
                         </div>
-                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $service->id_service ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
+                        <!-- <div class="button"><a href="<?php echo base_url(); ?>Service_list?service=<?php echo $service->id_service ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div> -->
+                        <div class="button"><a href="<?php echo base_url(); ?>Service_list?service=<?php echo $service->id_service ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
                     </div>
                 </div>
             <?php endforeach; ?>

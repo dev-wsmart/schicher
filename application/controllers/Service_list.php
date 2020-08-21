@@ -9,6 +9,7 @@ class Service_list extends CI_Controller {
 		}
 
 	public function index(){
+
 		$contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
 			   'title' => 'Service_list ',

@@ -1,16 +1,19 @@
 <?php
 
+	$service = $_GET['service'];;
+
   $this->db->select("*");
   $this->db->from("service_list");
   $this->db->join('service', 'service_list.id_service = service.id_service');
-  $this->db->where("service_list.status", "1");
+	$this->db->where("service_list.status", "1");
+  $this->db->where("service_list.id_service", "$service");
   $query = $this->db->get();
   $service_list = $query->result();
 	
   $this->db->select("*");
   $this->db->from("service");
   $this->db->where("service.status", "1");
-  $this->db->where("service.id_service", "1");
+  $this->db->where("service.id_service", "$service");
   $query = $this->db->get();
   $services = $query->result();
 
@@ -20,7 +23,8 @@
     <div class="row p-3">
         <div class="title">
             <div class="title-circle">
-                <img src="<?php echo base_url(); ?>/assets/images/car.png" />
+								<img src="<?php echo base_url(); ?>/assets/images/car.png" />
+								
 			</div>
 	<?php foreach($services as $ser):
 		if($this->session->userdata("language")=='english'){$topicH = $ser->topic_en;}
@@ -78,10 +82,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#nav a').removeClass("active");
-        $('#service_list').addClass("active");
+        $('#service').addClass("active");
 
         $('.navbar-nav a').removeClass("active");
-        $('a.service_list').addClass("active");
+        $('a.service').addClass("active");
     });
 </script>
 
