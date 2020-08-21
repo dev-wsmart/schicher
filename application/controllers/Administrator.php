@@ -344,16 +344,24 @@ class Administrator extends CI_Controller {
 			$this->_example_output($output);
 	}
 
+	function customerinfo(){
+		$crud = new grocery_CRUD();
+		$crud->set_theme("bootstrap");
+		$crud->set_table("customer_contact")
+		->display_as('lname', 'Lastname')
+		->display_as('tel', 'Telephone');
+
+		$crud->unset_add();
+        $crud->unset_edit();
+
+		$output = $crud->render();
+		$this->_example_output($output);
+	}
+
 	function register(){
 		$crud = new grocery_CRUD();
 		$crud->set_theme("bootstrap");
 		$crud->set_table("userinfo");
-
-		$crud->field_type('name','readonly');
-		$crud->field_type('surname','readonly');
-		$crud->field_type('email','readonly');
-		$crud->field_type('telephone','readonly');
-		$crud->field_type('time','readonly');
 
 		$crud->unset_add();
         $crud->unset_edit();

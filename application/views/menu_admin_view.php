@@ -106,15 +106,23 @@
                 <li>
                     <a href="<?php echo base_url('administrator/news');?>"><i class="fa fa-newspaper-o"></i>&nbsp; News</a>
 				</li> 
-				<li>
-                    <a href="<?php echo base_url('administrator/service');?>"><i class="fa fa-wrench"></i>&nbsp; service</a>
-				</li> 
-				<li>
-                    <a href="<?php echo base_url('administrator/service_list');?>"><i class="fa fa-wrench"></i>&nbsp; service list</a>
+                <li>
+                    <a href="#"><i class="fa fa-wrench"></i>&nbsp; Service<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?php echo base_url('administrator/service');?>"><i class="fa fa-circle"></i>&nbsp; Service</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url('administrator/service_list');?>"><i class="fa fa-circle"></i>&nbsp; Service List</a>
+                        </li>
+                    </ul>    
                 </li>
                 <li>
                     <a href="<?php echo base_url('administrator/gallery');?>"><i class="fa fa-picture-o"></i>&nbsp; Gallery</a>
-                </li> 
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/customerinfo');?>"><i class="fa fa-phone"></i>&nbsp; Customer info</a>
+                </li>
                 <li>
                     <a href="<?php echo base_url('administrator/register');?>"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Registered People</a>
                 </li>
