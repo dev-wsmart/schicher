@@ -43,20 +43,25 @@
 			if($this->session->userdata("language")=='english')
 			{
 				$list = $service->list_en;
-				$detail = $service->detail_en;
+        $detail = $service->detail_en;
+        $pdf = $service->pdf_en;
+        $pdfPath = base_url()."/assets/uploads/PDF_en/".$pdf;
 			}
 			elseif($this->session->userdata("language")=='german')
 			{
 				$list = $service->list_de;
-				$detail = $service->detail_de;
+        $detail = $service->detail_de;
+        $pdf = $service->pdf_de;
+        $pdfPath = base_url()."/assets/uploads/PDF_de/".$pdf;
 			}
 			else
 			{
 				$list = $service->list_th;
-				$detail = $service->detail_th;
+        $detail = $service->detail_th;
+        $pdf = $service->pdf_th;
+        $pdfPath = base_url()."/assets/uploads/PDF_th/".$pdf;
 			}
 		?>
-
                 <div class="row frame mb-3">
                     <div class="col-lg-4">
                         <div class="package-title"><?php echo $list; ?></div>
@@ -68,11 +73,13 @@
                     <div class="col-lg-8">
                         <div class="details-title"><?php echo $list;?></div>
                         <div class="details">
-                          <?php echo mb_substr($detail,0,600,'UTF-8'); ?>
+                          <id
+                          <?php echo $detail ?>
                         </div>
-                        <div class="button"><a href="<?php echo base_url(); ?>details/view/<?php echo $service->id_service ?>" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
+                        <div class="button"><a href="<?php echo $pdfPath; ?>" target="_blank" class="btn btn-more"><?php echo $this->lang->line('more'); ?></a></div>
                     </div>
-                </div>
+                
+              </div>
             <?php endforeach; ?>
         </div>
         </div>
