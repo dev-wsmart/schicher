@@ -298,6 +298,7 @@ class Administrator extends CI_Controller {
 			$crud->field_type('status','dropdown',array('1' => 'Active', '0' => 'Inactive'));
 			$crud->field_type('id_service','dropdown',array('1' => 'Vehicle Analysis ', '2' => 'Claims &Appraisal','3' => 'Vehicle Management Services ', '4' => 'Dealership Certification & Auditing ', '5' => 'Dealership Training & Qualification'));
 			$crud->set_field_upload('images_list','assets/uploads/Service_list');
+			$crud->set_field_upload('pdf', 'assets/uploads/PDF');
 			$output = $crud->render();
 			$this->_example_output($output);
 	}
