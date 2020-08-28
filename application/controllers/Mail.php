@@ -5,16 +5,16 @@ class Mail extends CI_Controller{
   parent::__construct();
 
    $config = array();
-   $config['protocol']  = 'smtp';
-   $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+   $config['protocol']  = 'POP3';
+   $config['smtp_host'] = 'mail.smartsure.co.th';
    $config['mailtype']  = 'html';
-   $config['smtp_port'] = 465;
-   $config['smtp_user'] = 'smartsure@smartsure.co.th';
-   $config['smtp_pass'] = 'smartsure1234';
+   $config['smtp_port'] = 587;
+   $config['smtp_user'] = 'info@smartsure.co.th';
+   $config['smtp_pass'] = 'SBwlGBX61O';
    $config['charset']   = 'utf-8';
    $config['wordwrap']  = TRUE;
    $config['starttls'] = TRUE;
-   $this->load->library('email', $config);
+   $this->load->library('email');
    $this->email->set_newline("\r\n");
    $this->email->initialize($config);
   }
@@ -23,11 +23,9 @@ class Mail extends CI_Controller{
   {
     $this->_send_mail();
     //echo "<meta http-equiv=\"refresh\" content=\"1;url='".base_url()."success'\">";
-    
-    $this->load_view();
   }
 
-  private function load_view(){
+  private function load_view($data){
     $contents['cart_session'] = $this->session->userdata('cart_session');
 		$template = array(
 			   'title' => 'Thank You | Smart Sure',
@@ -36,7 +34,7 @@ class Mail extends CI_Controller{
           );
 
 		// $template['content'] = $this->load->view('About',$contents,TRUE);
-		$this->load->view('template',$template, $contents);
+		$this->load->view('template',$template, $contents, $data);
   }
 
   private function _send_mail()
@@ -54,17 +52,18 @@ class Mail extends CI_Controller{
       'message' => $message
     );
 
-    $user = array('smartsure@smartsure.co.th');
+    $user = array('info@smartsure.co.th');
     $this->email->from($email);//ชื่อผู้ส่ง
-    $this->email->to($user); //เมล์ของบริษัท
+    $this->email->to('smartsureinfo@gmail.com'); //เมล์ของบริษัท
     $this->email->subject($headline);//หัวเรื่อง
 
-    $this->email->message($this->load->view('Success',$data,TRUE));//ข้อความ
+    $this->email->message($this->load->view('templateMail',$data, TRUE));//ข้อความ
+    $this->load_view($data);
     
     if ($this->email->send()){
-      return TRUE;
+      return true;
     }
   
-  }			
+  }
 
 }
